@@ -1,5 +1,5 @@
 build:
-	latexmk -pdf main
+	latexmk -xelatex main
 
 clean:
 	latexmk -c main
