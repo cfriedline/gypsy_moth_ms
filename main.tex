@@ -1,4 +1,5 @@
 \documentclass[fleqn,11pt]{wlpeerj}
+\usepackage{lineno}
 
 \title{The ecological genomics of gypsy moth invasion along a latitudinal gradient}
 
@@ -27,6 +28,8 @@ TODO
 \flushbottom
 \maketitle
 \thispagestyle{empty}
+
+\linenumbers
 
 \section*{Introduction}
 TODO
@@ -74,9 +77,35 @@ per \cite{Yun:2014dn},  using \texttt{fastq\_masker} from the FastX toolkit
 Masked fastq files were mapped using \texttt{bowtie2} \cite{Langmead:2012jh},
 version 2.2.4, using flags \texttt{--local --very-sensitive-local}.  The
 resulting  sam files were converteted to their binary equivalent, sorted, and
-indexed. To  these indexed bam files, appropriate \texttt{RG} information was
-added using \texttt{picard} (https://broadinstitute.github.io/picard/) version
-1.112 to inform variant calling.
+indexed. To each of these indexed bam files, appropriate \texttt{RG} ID and
+sample information was added using \texttt{picard}
+(https://broadinstitute.github.io/picard/) version 1.112 to inform variant
+calling.
+
+Duplicates were marked using \texttt{Picard} and the resulting files were
+indexed using \texttt{samtools} \citep{Li:2009ka}, version 1.2.  Sequence
+variants were called using samtools 1.2 and bcftools 1.2 with individual  ploidy
+level set to \texttt{2} for all samples.  The variants were filtered  using
+\texttt{vcftools} \cite{Danecek:2011gz}, version 0.1.14, such that only
+biallelic-SNPs remained in cases where a variant call was present in at least
+50\% of the samples and the minimum gentoype quality (\texttt{--minQG}) of 3. An
+additional filtering using \texttt{vcfutils.pl} (from \texttt{bcftools}) was
+performed to only keep sites with mapping qualities of at least 10
+(\texttt{varFilter -Q 10}). The vcf file was then double checked to ensure all
+reference and alternate alleles were single nucleotides before imputation with
+\texttt{Beagle} \citep{Browning:2007ge}, version 4.0.  The impuation was
+performed on 30 CPUs using the following non-default parameters
+(\texttt{phase-its=10, burnin-its=20, impute-its=10}).
+
+For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
+was performed, in order: monomorphic SNPs were removed, all SNPs with minor
+allele frequencies (corrected for finite population size) $< 0.01$ were removed,
+SNPs with $F_{IS} < -0.05$ or $F_{IS} > 0.5$ were removed.  Finally, SNPs were
+oriented  according to dosage of globally-minor allele, rather than alternate.
+In other words,  in a file of genotypes where 0, 1, 2 would normally represent
+counts of alternate allele  (as output by \texttt{vcftools}), 0,1,2 were recoded
+to represent counts of the  minor allele.  This ``swapped" representation was
+then used as input for  downstream analysis
 
 \subsection*{Population statistics}
 
