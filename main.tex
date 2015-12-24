@@ -31,7 +31,7 @@ TODO
 \maketitle
 \thispagestyle{empty}
 
-\linenumbers
+\linenumbers%
 
 \section*{Introduction}
 TODO
@@ -46,7 +46,7 @@ according to manufacturer's protcool.  The library was prepared and sequenced as
 a single run of paired-end reads on the Illumina HiSeq 2500 platform at the
 Virginia Commonwealth Univesrity Nucleic Acids Research Facility. Quality was
 initially asssed using FastQC \citep{fastqc} and subsequently processed with
-IPython \cite{Perez:2007hy} and BioPython \cite{Cock:2009hj}. The read pairs
+IPython~\cite{Perez:2007hy} and BioPytho~\cite{Cock:2009hj}. The read pairs
 were each evaluated along sliding windows of 5 bp.  If the mean score in this
 window was below a score of 30, the read was trimmed at that beginning of the
 window. If the shortened read was less than 50\% of the length of the original
@@ -71,12 +71,12 @@ profile using a \texttt{tblastn} e-value cutoff of $0.001$.
 
 \subsection*{Sequence processing and variant calling} Sequencing of 192
 individual moths, exclusive of the one used for assembly,  as performed on
-reduced genomic DNA per \cite{PARCHMAN:2012ca}. In total, two  Illumina HiSeq
+reduced genomic DNA per~\cite{PARCHMAN:2012ca}. In total, two  Illumina HiSeq
 2500 lanes were sequenced. Bases with quality scores less than 33 were masked,
-per \cite{Yun:2014dn},  using \texttt{fastq\_masker} from the FastX toolkit
+per~\cite{Yun:2014dn},  using \texttt{fastq\_masker} from the FastX toolkit
 \citep{citeulike:9103573}, version 0.0.14.
 
-Masked fastq files were mapped using \texttt{bowtie2} \cite{Langmead:2012jh},
+Masked fastq files were mapped using \texttt{bowtie2}~\cite{Langmead:2012jh},
 version 2.2.4, using flags \texttt{--local --very-sensitive-local}.  The
 resulting  sam files were converteted to their binary equivalent, sorted, and
 indexed. To each of these indexed bam files, appropriate \texttt{RG} ID and
@@ -86,28 +86,28 @@ calling.
 
 Duplicates were marked using \texttt{Picard} and the resulting files were
 indexed using \texttt{samtools} \citep{Li:2009ka}, version 1.2.  Sequence
-variants were called using samtools 1.2 and bcftools 1.2 with individual  ploidy
-level set to \texttt{2} for all samples.  The variants were filtered  using
-\texttt{vcftools} \cite{Danecek:2011gz}, version 0.1.14, such that only
-biallelic-SNPs remained in cases where a variant call was present in at least
-50\% of the samples and the minimum gentoype quality (\texttt{--minQG}) of 3. An
-additional filtering using \texttt{vcfutils.pl} (from \texttt{bcftools}) was
-performed to only keep sites with mapping qualities of at least 10
-(\texttt{varFilter -Q 10}). The vcf file was then double checked to ensure all
-reference and alternate alleles were single nucleotides before imputation with
-\texttt{Beagle} \citep{Browning:2007ge}, version 4.0.  The impuation was
-performed on 30 CPUs using the following non-default parameters
+variants were called using samtools 1.2 and bcftools 1.2 \citep{Li:2009ka} with
+individual  ploidy level set to \texttt{2} for all samples.  The variants were
+filtered  using \texttt{vcftools}~\citep{Danecek:2011gz}, version 0.1.14, such
+that only biallelic-SNPs remained in cases where a variant call was present in
+at least 50\% of the samples and the minimum gentoype quality (\texttt{--minQG})
+of 3. An additional filtering using \texttt{vcfutils.pl} (from
+\texttt{bcftools}) was performed to only keep sites with mapping qualities of at
+least 10 (\texttt{varFilter -Q 10}). The vcf file was then double checked to
+ensure all reference and alternate alleles were single nucleotides before
+imputation with \texttt{Beagle} \citep{Browning:2007ge}, version 4.0.  The
+impuation was performed on 30 CPUs using the following non-default parameters
 (\texttt{phase-its=10, burnin-its=20, impute-its=10}).
 
 For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
 was performed, in order: monomorphic SNPs were removed, all SNPs with minor
 allele frequencies (corrected for finite population size) $< 0.01$ were removed,
 SNPs with $F_{IS} < -0.05$ or $F_{IS} > 0.5$ were removed.  Finally, SNPs were
-oriented  according to dosage of globally-minor allele, rather than alternate.
-In other words,  in a file of genotypes where 0, 1, 2 would normally represent
-counts of alternate allele  (as output by \texttt{vcftools}), 0,1,2 were recoded
-to represent counts of the  minor allele.  This ``swapped" representation was
-then used as input for  downstream analysis
+oriented  according to dosage of globally-minor allele, rather than alternate
+allele  with respect to the assembly. In other words,  in a file of genotypes
+where 0, 1, 2 would normally represent counts of alternate allele  (as output by
+\texttt{vcftools}), 0,1,2 were recoded to represent counts of the  minor allele.
+This ``swapped'' representation was then used as input for  downstream analysis
 
 \subsection*{Population statistics}
 
