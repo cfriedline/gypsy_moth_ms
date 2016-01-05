@@ -100,8 +100,8 @@ with mapping qualities of at least 10 (\texttt{varFilter -Q 10}). The vcf file
 was then double checked to ensure all reference and alternate alleles were
 single nucleotides before imputation with \texttt{Beagle}
 \citep[][version 4.0, r1399]{Browning:2007ge}.  The impuation was performed on 30 CPUs
-using the following non-default parameters: \texttt{phase-its=10, burnin-its=20,
-impute-its=10}.
+using the following non-default parameters: \texttt{phase-its=20, burnin-its=20,
+impute-its=20}.
 
 For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
 was performed.  First, \texttt{VCFtools} was used to include only bialleleic
