@@ -103,28 +103,23 @@ using the following non-default parameters (\texttt{phase-its=10, burnin-its=20,
 impute-its=10}).
 
 For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
-was performed.  First, \texttt{VCFtools} was used to restrict SNPs to the
-following criteria: only biallelic SNPs
-(\texttt{--min-alleles/--max-alleles=2}), the minor allele must be found in at
-least one sample (\texttt{--mac=1}), the minor allele frequency must be at least
-1\% (\texttt{--mac=0.01}).  Depth across samles (DP), Alternate allele call quality (QUAL),
-and RMS mapping quality values (MQ), reported in the VCF file were examined.  An additional
-filtering step was conducted using \texttt{vcfutils.pl} (from \texttt{bcftools}) to
-filter SNPs with MQ values less than 10.
-
-
-
-
-monomorphic SNPs were removed, all SNPs with minor allele frequencies (corrected
-for finite population size) $< 0.01$ were removed, SNPs with $F_{IS} < -0.05$ or
-$F_{IS} > 0.5$ were removed.  We only considered SNPs to be valid if they passed
-filtering in both the IMP and NI datasets. Finally, SNPs were oriented according
-to dosage of globally-minor allele, rather than alternate allele with respect to
-the assembly. In other words, in a file of genotypes where 0/1/2 would normally
-represent counts of alternate allele in a diploid genotype,  (as output by
-\texttt{vcftools}), 0/1/2 were recoded to represent counts of the minor allele
-(i.e., a genotype of 2 indicates two copies of the globally minor alele). This
-``swapped'' representation was then used as input for downstream analysis.
+was performed.  First, \texttt{VCFtools} was used to include only bialleleic
+SNPs (\texttt{--min-alleles=2, --max-alleles=2}), SNPs with minor allele frequency
+of at least 1\% (\texttt{--mac=0.01}) and SNPs present in at least 50\% of the
+samples (\texttt{--max-missing=0.5}).  Depth across samles (DP), Alternate
+allele call quality (QUAL), and RMS mapping quality values (MQ), reported in the
+VCF file were examined.  An additional filtering step was conducted using
+\texttt{vcfutils.pl} (from \texttt{bcftools}) to remove SNPs with MQ values less
+than 10.  Monomorphic SNPs were removed as well as SNPs with
+$F_{IS} < -0.05$ or $F_{IS} > 0.5$.  We only considered SNPs to be
+valid if they passed filtering in both the IMP and NI datasets. Finally, SNPs
+were oriented according to dosage of globally-minor allele, rather than
+alternate allele with respect to the assembly. In other words, in a file of
+genotypes where 0/1/2 would normally represent counts of alternate allele in a
+diploid genotype,  (as output by \texttt{vcftools}), 0/1/2 were recoded to
+represent counts of the minor allele (i.e., a genotype of 2 indicates two copies
+of the globally minor alele). This ``swapped'' representation was then used as
+input for downstream analysis.
 
 
 \subsection*{Population statistics}
