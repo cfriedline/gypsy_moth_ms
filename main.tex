@@ -81,10 +81,10 @@ per~\cite{Yun:2014dn},  using \texttt{fastq\_masker} from the FastX toolkit
 
 Masked fastq files were mapped using \texttt{bowtie2}~\citep[][version
 2.2.4]{Langmead:2012jh}, using flags  \texttt{--local
---very-sensitive-local}.  The resulting  sam files were converteted to their
+--very-sensitive-local}.  The resulting  SAM files were converteted to their
 binary equivalent, sorted, and indexed. To each of these indexed bam files,
 appropriate \texttt{RG} ID and sample information was added using
-\texttt{picard} \\ (\url{https://broadinstitute.github.io/picard}) version 1.112
+\texttt{picard} \\ (\url{https://broadinstitute.github.io/picard}), version 1.112
 to inform variant calling.
 
 Duplicates were marked using \texttt{Picard} and the resulting files were
@@ -99,9 +99,9 @@ gentoype quality (\texttt{--minQG}) of 3. An additional filtering using
 with mapping qualities of at least 10 (\texttt{varFilter -Q 10}). The vcf file
 was then double checked to ensure all reference and alternate alleles were
 single nucleotides before imputation with \texttt{Beagle}
-\citep[][version 4.0]{Browning:2007ge}.  The impuation was performed on 30 CPUs
-using the following non-default parameters (\texttt{phase-its=10, burnin-its=20,
-impute-its=10}).
+\citep[][version 4.0, r1399]{Browning:2007ge}.  The impuation was performed on 30 CPUs
+using the following non-default parameters: \texttt{phase-its=10, burnin-its=20,
+impute-its=10}.
 
 For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
 was performed.  First, \texttt{VCFtools} was used to include only bialleleic
