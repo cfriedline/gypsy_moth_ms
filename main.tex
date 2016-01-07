@@ -105,16 +105,18 @@ impute-its=20}.
 
 For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
 was performed.  First, \texttt{VCFtools} was used to include only bialleleic
-SNPs (\texttt{--min-alleles=2, --max-alleles=2}), SNPs with minor allele frequency
-of at least 1\% (\texttt{--mac=0.01}) and SNPs present in at least 50\% of the
-samples (\texttt{--max-missing=0.5}).  Depth across samles (DP), Alternate
-allele call quality (QUAL), and RMS mapping quality values (MQ), reported in the
-VCF file were examined.  An additional filtering step was conducted using
-\texttt{vcfutils.pl} (from \texttt{bcftools}) to remove SNPs with MQ values less
-than 10.  Monomorphic SNPs were removed as well as SNPs with
-$F_{IS} < -0.05$ or $F_{IS} > 0.5$.  We only considered SNPs to be
-valid if they passed filtering in both the IMP and NI datasets. Finally, SNPs
-were oriented according to dosage of globally-minor allele, rather than
+SNPs (\texttt{--min-alleles=2, --max-alleles=2}), SNPs with minor allele
+frequency (MAF) of at least 1\% (\texttt{--mac=0.01}) and SNPs present in at
+least 50\% of the samples (\texttt{--max-missing=0.5}).  Additional MAF
+(correcting for  finite population size) and percent missing filtering was done
+using Python following removal of duplicate samples from the variant data and
+Depth across samles (DP), Alternate allele call quality (QUAL), and RMS mapping
+quality values (MQ), reported in the VCF file were examined.  An additional
+filtering step was conducted using \texttt{vcfutils.pl} (from \texttt{bcftools})
+to remove SNPs with MQ values less than 10.  Monomorphic SNPs were removed as
+well as SNPs with $F_{IS} < -0.05$ or $F_{IS} > 0.5$.  We only considered SNPs
+to be valid if they passed filtering in both the IMP and NI datasets. Finally,
+SNPs were oriented according to dosage of globally-minor allele, rather than
 alternate allele with respect to the assembly. In other words, in a file of
 genotypes where 0/1/2 would normally represent counts of alternate allele in a
 diploid genotype,  (as output by \texttt{vcftools}), 0/1/2 were recoded to
