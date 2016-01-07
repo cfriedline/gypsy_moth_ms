@@ -33,7 +33,7 @@ TODO
 \maketitle
 \thispagestyle{empty}
 
-\linenumbers
+\linenumbers%
 
 \section*{Introduction}
 TODO
@@ -132,34 +132,40 @@ input for downstream analysis.
 
 \subsection*{Patterns of phenotypic and genetic variation}
 
-Values for each phenotypic trait were summarized  within populations 
-using parametric summary statistics (i.e. means and variances). Differentiation
-among populations for phenotypic traits was assessed using Multivariate Analysis of Variance (MANOVA). Statistical
-significance of the MANOVA model was determined using Wilk's lambda as the test statistic and $\alpha = 0.05$. 
-We subsequently used one-way Analysis of Variance (ANOVA) to assess differentiation separately for each phenotypic 
-trait. We treated population identifiers as a fixed effect for statistical 
-hypothesis testing ($\alpha = 0.05$), but as a random effect 
-for estimation of variance components. Variance components were used to construct 
-a measure of phenotypic differentiation akin to hierarchical $F$-statistics. 
-Specifically, we used the ratio of the variance due to population identifiers 
-to the total phenotypic variance ($P_{ST}$) as a measure of phenotypic differentiation. 
-All analysis was conducted using the \texttt{stats} and \texttt{lme4} libraries 
-of R ver. 3.1.2 (R Core Team 2014). Lastly, we used partial redundancy
-analysis (pRDA) to describe the effect of climate and geography on phenotypic trait values. 
-We partitioned the variance due to climate and geography using standard
-variance partitioning methods \citep{Borcard:1992}. Geography was quantified using Moran eigenvector maps (MEMs) as
-determined using the \texttt{pcnm} function in the \texttt{vegan} ver. 2.2-1 library of R. We used all 
-eigenvectors with positive eigenvalues to describe geography. Input to the \texttt{pcnm} function was a
-matrix of pairwise geographical distances among populations, where geographical distance was calculated
-as great circle distances (km) using the \texttt{geosphere} library in R.
+Values for each phenotypic trait were summarized  within populations using
+parametric summary statistics (i.e., means and variances). Differentiation among
+populations for phenotypic traits was assessed using Multivariate Analysis of
+Variance (MANOVA). Statistical significance of the MANOVA model was determined
+using Wilk's lambda as the test statistic and $\alpha = 0.05$. We subsequently
+used one-way Analysis of Variance (ANOVA) to assess differentiation separately
+for each phenotypic trait. We treated population identifiers as a fixed effect
+for statistical hypothesis testing ($\alpha = 0.05$), but as a random effect for
+estimation of variance components. Variance components were used to construct a
+measure of phenotypic differentiation akin to hierarchical $F$-statistics.
+Specifically, we used the ratio of the variance due to population identifiers to
+the total phenotypic variance ($P_{ST}$) as a measure of phenotypic
+differentiation. All analysis was conducted using the \texttt{stats} and
+\texttt{lme4} libraries of R ver. 3.1.2 (R Core Team 2014). Lastly, we used
+partial redundancy analysis (pRDA) to describe the effect of climate and
+geography on phenotypic trait values. We partitioned the variance due to climate
+and geography using standard variance partitioning methods \citep{Borcard:1992}.
+Geography was quantified using Moran eigenvector maps (MEMs) as determined using
+the \texttt{pcnm} function in the \texttt{vegan} ver. 2.2-1 library of R. We
+used all eigenvectors with positive eigenvalues to describe geography. Input to
+the \texttt{pcnm} function was a matrix of pairwise geographical distances among
+populations, where geographical distance was calculated as great circle
+distances (km) using the \texttt{geosphere} library in R.
 
-Patterns of genetic variation within and among populations were described using standard
-population genetic indices: observed ($H_{obs}$) and expected ($H_{exp}$) heterozygosities, Wright's inbreeding
-coefficient ($F$), and hierarchical $F$-statistics (e.g. $F_{ST}$). Estimates were made for each
-SNP and all SNPs combined using the \texttt{hierfstat} library in R. Confidence intervals ($95\%$) for
-multilocus estimates were generated using bootstrapping across SNPs ($n = 1,000$). Genetic structure
-among populations was also assessed using principal components analysis (PCA) following ~\cite{Patterson:2006}.
-Significance of principal components (PCs) was assessed using Tracy-Widom tests with $\alpha = 0.05$.
+Patterns of genetic variation within and among populations were described using
+standard population genetic indices: observed ($H_{obs}$) and expected
+($H_{exp}$) heterozygosities, Wright's inbreeding coefficient ($F$), and
+hierarchical $F$-statistics (e.g. $F_{ST}$). Estimates were made for each SNP
+and all SNPs combined using the \texttt{hierfstat} library in R. Confidence
+intervals ($95\%$) for multilocus estimates were generated using bootstrapping
+across SNPs ($n = 1,000$). Genetic structure among populations was also assessed
+using principal components analysis (PCA) following~\cite{Patterson:2006}.
+Significance of principal components (PCs) was assessed using Tracy-Widom tests
+with $\alpha = 0.05$.
 
 \subsection*{Genome-wide association analyses}
 (This section should be for phenotypes (piMASS) and environments (Bayenv2))
