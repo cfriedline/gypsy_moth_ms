@@ -41,6 +41,10 @@ TODO
 
 \section*{Methods}
 
+\subsection*{Sampling}
+
+\subsection{Phenotype determination}
+
 \subsection*{Library preparation and sequencing}
 
 Genomic DNA extracted using Qiagen DNeasy Plant Mini kit (Qiagen, cat \# 69104)
@@ -57,7 +61,7 @@ in a read had quality values less than 30, it was discarded along with its pair.
 
 \subsection*{Draft assembly}
 
-An assembly was produced for the sole purpose of variant calling and is not
+An assembly was produced for the purpose of variant calling and is not
 considered as a candidate for complete genomic assembly. The quality-filtered
 reads from the paired-end sequencing library was used as input into
 \texttt{MaSuRCA} \citep[][version 2.3.2]{Zimin:2013kn}, with the following
@@ -124,20 +128,36 @@ represent counts of the minor allele (i.e., a genotype of 2 indicates two copies
 of the globally minor alele). This ``swapped'' representation was then used as
 input for downstream analysis.
 
+\subsection*{Patterns of phenotypic and genetic variation}
 
-\subsection*{Population statistics}
-To account for population structure in the data,
+Patterns of phenotypic variation within and among populations were decsribed using
+univariate and multivariate statistics. Values for each phenotypic trait were summarized 
+within populations using parameteric summary statistics (i.e. means and variances). Differentiation
+among populations for phenotypic traits was assessed using multivariate analysis of variance (MANOVA). Statistical
+signficance of the MANOVA model was determined using Wilk's lambda as the test statistic and $\alpha = 0.05$. 
+We subsequently used one-way analysis of variance (ANOVA) to assess differentiation separately for each phenotypic 
+trait. Lastly, we used partial redundancy analysis (pRDA) to assess the effect of climate and geographical distance on
+phenotypic trait values. We partitioned the variance due to climate and geography using standard
+variance paritioning methods (citation). All analysis was conducted using the stats and 
+vegan libraries of R ver. 3.1.2 (R Core Team 2014). 
 
+\subsection*{Genome-wide association analyses}
+This section should be for phenotypes (piMASS) and environments (Bayenv2)
 
-\subsection*{Environmental assocation}
-
-\subsection*{Loci under selection}
-
-
-\subsection*{}
+\subsection*{Genetic architecture and selection}
 
 \section*{Results}
-TODO
+Use same headings as in materials and methods as applicable.
+
+I suggest the following sections:
+
+Draft assembly and DNA sequence analysis
+
+Patterns of phenotypic and genetic variation
+
+Genome-wide association analyses
+
+Genetic architecture and selection
 
 
 \section*{Discussion}
