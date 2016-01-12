@@ -116,7 +116,7 @@ frequency (MAF) of at least 1\% (\texttt{--mac=0.01}) and SNPs present in at
 least 50\% of the samples (\texttt{--max-missing=0.5}).  Additional MAF
 (correcting for  finite population size) and percent missing filtering was done
 using Python following removal of duplicate samples from the variant data and
-Depth across samles (DP), Alternate allele call quality (QUAL), and RMS mapping
+Depth across samples (DP), Alternate allele call quality (QUAL), and RMS mapping
 quality values (MQ), reported in the VCF file were examined.  An additional
 filtering step was conducted using \texttt{vcfutils.pl} (from \texttt{bcftools})
 to remove SNPs with MQ values less than 10.  Monomorphic SNPs were removed as
@@ -164,7 +164,7 @@ and all SNPs combined using the \texttt{hierfstat} library in R. Confidence
 intervals ($95\%$) for multilocus estimates were generated using bootstrapping
 across SNPs ($n = 1,000$). Genetic structure among populations was also assessed
 using principal components analysis (PCA) following~\cite{Patterson:2006}.
-Significance of principal components (PCs) was assessed using Tracy-Widom tests
+Significance of principal components (PCs) was determined using Tracy-Widom tests
 with $\alpha = 0.05$.
 
 \subsection*{Genome-wide association analyses}
@@ -179,7 +179,47 @@ TODO
 TODO
 
 \subsection*{Patterns of phenotypic and genetic variation}
-TODO
+Summary of results for phenotypes: 
+
+The MANOVA was significant $F_{15,444.85} = 4.8216, P = 1.022e-08$
+
+The same result is obtained using Pillai's trace (P val is a tad larger)
+
+One-way ANOVAs: significant for mass ($F_{5,163} = 3.0944, P = 0.01073$) 
+and TDT ($F_{5,163} = 8.266, P = 5.545e-07$). For TDT, the pattern is 
+roughly clinal, with larger TDTs in the south and smaller TDTs in the north. 
+The exception was the QC32 pop which was almost as large as NY. 
+For mass, the pattern is less clear, with slightly larger masses in the south, 
+but the result is driven primarily by the low mass in QC93. Moreover, there was
+an almost significant regression between mass and TDT, so
+that higher TDT was associated with higher mass. 
+
+Pst values (closer to one means more variance due to among pop effects):
+
+mass: 0.07019467
+
+pdt: 0.03702012
+
+tdt: 0.2270976
+
+If heritability (h2) is low PST is approximately QST or larger (as long as pop variance is constant).
+If true, tdt is likely more differentiated than FST, which implies local adaptation.
+
+The RDA analyses were significant for the full model (clim + geog) and pure clim,
+which means that clim and the confounded effects of clim and geog were statistically
+significant predictors of phens.
+
+stats: $F_{5,163} = 4.2884, P = 0.001$ for full model; $F_{3,163} = 4.2105, P = 0.001$ for clim|geog.
+Keep in mind that F-values for this are approximate so the P-value is determined via permutations
+following Legendre and Legendre (cite their eco-babble book here).
+
+The $R^{2}$ for the full RDA model was $0.1163$. This is the total explainable variance (i.e. inertia).
+Also, keep in mind that most of the clim and geog signal is among pops, so the
+explainable variance is really about the differences among populations.
+
+Variance partitioning revealed that $58.90\%$ of the explainable variance in phens
+was due to climate and that the remainder of the explainable variance was due to
+the joint effects (i.e. confounded effects) of climate and geography ($41.10\%$). 
 
 \subsection*{Genome-wide association analyses}
 TODO
