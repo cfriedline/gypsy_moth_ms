@@ -18,7 +18,7 @@ gradient}
 \affil[2]{College of Environmental Science and Forestry, State University of
 New York}
 \affil[3]{Department of Biology, University of Richmond}
-\affil[*]{Author contributed equally}
+\affil[*]{Authors contributed equally}
 \affil[ \textdagger]{Corresponding author}
 
 \keywords{}
@@ -36,7 +36,29 @@ TODO
 \linenumbers%
 
 \section*{Introduction}
-TODO
+
+
+Phenotypic and genetic differentiation of populations after establishment and range expansion of an invasive species presents a novel opportunity to test hypotheses regarding the process of local adaptation and the resulting genetic structure of populations expanding across environmental gradients. Newly established species face many adaptive challenges in order to succeed in ecological conditions that may differ drastically from their native environment and location of introduction. Adjustment in phenotypic traits, whether through evolutionary mechanisms or plasticity, are vital to dispersal and early range expansion. These processes rely heavily on prior evolutionary history and the reaction norm of plasticity, as well as both deterministic and stochastic events. [KG: DID I ADD TOO MUCH TEXT ON PLASTICITY?]
+ 
+Demographic processes associated with invasions have been shown to limit adaptive potential and negatively affect fitness landscapes. These events include founder effects, genetic drift, population bottlenecks, and inbreeding [CITE].  Invasive species are particularly susceptible to reductions in allelic richness and heterozygosity due to these limiting processes. [KG: WHAT WAS INTENDED BY "and also varying selective regimes" I DIDN'T WANT TO DELETE AND LOSE THE INTENTION OF THE SENTENCE]  The key to divulging the underlying mechanisms that change the genetic basis of fitness-related traits is to design experiments that directly test selection and local adaptation [STENGTHEN THIS SENTENCE, IT IS A BIT CIRCULAR].
+ 
+Classical approaches in quantitative genetics TO TEST XXX include common garden and reciprocal transplant experiments. Such designs inform the genetic basis of selection and local adaptation by estimating fitness over an environmental gradient but are limited in non-model, non-plant organisms due to the feasibility of rearing natural populations in their natural environments over multiple generations while keeping track of population pedigrees (Salvonian et al.2013, Hirschhorn/Daly 2005). Often, the traits linked to fitness are polygenic and identification of the genomic loci for these traits was nearly impossible until recent advancements in sequencing technologies. Coupling new genomic resources with classical approaches has vastly increased the inferential power of detecting polygenic adaptation. Reduced sequencing costs have also made genome-wide association studies (GWAS) possible for a large number of individuals and organisms in natural populations not previously possible. [FOR THIS AUDIENCE DO WE NEED TO INTRODUCE GWAS IN MORE DETAIL?]
+
+^^Maybe split this into two paragraphs and talk about Fst outliers and linkage disequilibrium before GWAS
+
+When trying to equate phenotypic divergence of a trait among populations to genomic regions, many studies will expect the same pattern of high divergence within the genome. This analsysis is usually performed by looking for Fst outliers, but there have been many cases of discordance between levels of differentiation among traits and their underlying loci (McKay/Latta2002).  High levels of phenotypic divergence can be observed with little to no differentiation within the genomic regions controlling these traits; thus making them undetectable in Fst outlier based studies (LeCorre and Kremer 2003).  Conversely, in instances where there is little apparent phenotypic divergence in populations, there can be important variation in genetic structure that provides insights to the process of adaptive differentiation. Since polygenic traits are affected by multiple loci, the detection of selection is spread out over loci so a single locus can appear to be neutral or nearly neutral. Thus, non-detection of selection at early stages could be evident at a single locus but there is expected to be strong correlations in allelic effects. This creates large covariances in allele frequencies of loci in the polygenic trait that becomes the main driver of Qst and when a trait is under divergent selection, Qst > Fst is expected of the underlying loci. (All Qst>=<Fst Papers, Kremer/LeCorre2012)
+
+In this study, we used the North American invasion of the European gypsy moth as a model to examine the genomic architecture of life history traits in populations across the latitudinal extent of the invasive range.  Using a GWAS approach to identify loci associated with phenotypic variation, we assessed the differentiation of populations along this extent in terms of biologically consequential traits. GWAS has strong inferential capabilities where we could use associated SNP data to estimate multilocus parameters of heretability, Fst, Qst, and linkage disequilibrium through (Baysian mumbo jumbo). 
+
+\subsection*{Study System}
+
+The European gypsy moth (\textit{Lymantria dispar dispar}, (L.)) was introduced to the United States in 1869 when individuals escaped from the collection of an amateur naturalists and silk producer, Étienne Léopold Trouvelot, in Medford, Massachusetts (Liebhold et al. 1989). While supplemental introductions have likely occurred over the last 150 years, microsatellite analyses point to this source as the main origin (Bogdanowicz et al. 1997). The severe bottleneck surrounding the introduction of the species has led to the conclusion that little genetic variation exists in gypsy moth population across North America (Wu et al. 2015). However, the current gypsy moth invasion front spans north into Canada, west into Minnesota, and as far south as North Carolina, and populations are experiencing very different selective pressures across this range based on climate and community composition. The combination of its wide geographic range, its known point of introduction, and its extremely well-documented spatial spread (Tobin et al. 2007) makes the North American gypsy moth an ideal model for examining the genetic architecture of an invasive species.
+ 
+Gypsy moths have a univoltine life cycle where caterpillar larvae hatch, grow until pupation, and emerge as adult moths in the spring and summer, laying eggs that overwinter in diapause. Hatch is generally timed with budburst of their preferred hosts, oak and aspen; however the gypsy moth is a generalist herbivore that will feed on more than 300 foliage hosts as larvae (Liebhold et al. 1995). Adults live between x and x days and do not feed during this time. Adult female \textit{L. dispar} are flightless and release pheromones to attract flying male mates (Doane and McManus 1981). Given the small window of opportunity to mate each year, the sucess of a gypsy moth population depends on the overlap of adult emergence between males and females (reference). Latitiudinal variation in developmental timing traits can impact this overlap, as well as the synchrony for larval developmental with prefered host trees.
+
+The well-developed pheromone signaling system of the gypsy moth has been exploited by forest pest managers for decades as an assessment tool for trapping regimes to measure spread and abundance. Pheromone-based solutions have also been developed for management through the development of mating disruption treatments. These efforts specifically target male gypsy moths and the extensive data assessing the progression of the North American invasion front is based exclusively on male moth captures, as females are flightless and not detectable at the same spatial scale. Therefore, we focus our analysis on traits in male gypsy moths to maximize the utility of our results to researchers and forest managers.
+
+In many insect species, including the gypsy moth, larger individuals have higher fecundity. In the gypsy moth, growth occurs entirely in the larval stage and climaxes just prior to pupation. A frequent measure of fitness for the gypsy moth is pupal mass, as this traits both represents growth during larval development as well as egg characteristics in females (reference).In gypsy moth females, as in other insects, size is directly related to egg load, with larger females producing more eggs. Thus, larger females are considered more fecund than smaller females. Although we examining phenotypes of male moths in this study, the larval conditions that produce larger individuals do so for both males and females. Size advantages specifically for males include increased flight capabilities and longer survival duration as an adult to find potential mates.
 
 
 \section*{Methods}
@@ -167,6 +189,7 @@ using principal components analysis (PCA) following~\cite{Patterson:2006}.
 Significance of principal components (PCs) was determined using Tracy-Widom tests
 with $\alpha = 0.05$.
 
+
 \subsection*{Genome-wide association analyses}
 (This section should be for phenotypes (piMASS) and environments (Bayenv2))
 
@@ -209,7 +232,7 @@ The RDA analyses were significant for the full model (clim + geog) and pure clim
 which means that clim and the confounded effects of clim and geog were statistically
 significant predictors of phens.
 
-stats: $F_{5,163} = 4.2884, P = 0.001$ for full model; $F_{3,163} = 4.2105, P = 0.001$ for clim|geog.
+stats: $F_{5,163} = 4.2884, P = 0.001$ for full model; $F_{3,163} = 4.2105, P = 0.001$ for $clim\|geog$.
 Keep in mind that F-values for this are approximate so the P-value is determined via permutations
 following Legendre and Legendre (cite their eco-babble book here).
 
