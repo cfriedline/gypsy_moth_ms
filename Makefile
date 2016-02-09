@@ -3,3 +3,6 @@ build:
 
 clean:
 	latexmk -c main
+
+github:
+	git push github master
