@@ -52,7 +52,18 @@ In this study, we used the North American invasion of the European gypsy moth as
 
 \subsection*{Study System}
 
-The European gypsy moth (\textit{Lymantria dispar dispar}, (L.)) was introduced to the United States in 1869 when individuals escaped from the collection of an amateur naturalists and silk producer, Étienne Léopold Trouvelot, in Medford, Massachusetts (Liebhold et al. 1989). While supplemental introductions have likely occurred over the last 150 years, microsatellite analyses point to this source as the main origin (Bogdanowicz et al. 1997). The severe bottleneck surrounding the introduction of the species has led to the conclusion that little genetic variation exists in gypsy moth population across North America (Wu et al. 2015). However, the current gypsy moth invasion front spans north into Canada, west into Minnesota, and as far south as North Carolina, and populations are experiencing very different selective pressures across this range based on climate and community composition. The combination of its wide geographic range, its known point of introduction, and its extremely well-documented spatial spread (Tobin et al. 2007) makes the North American gypsy moth an ideal model for examining the genetic architecture of an invasive species.
+The European gypsy moth (\textit{Lymantria dispar dispar} L.) was introduced to the United States in 1869 when individuals escaped from the collection of an amateur naturalists and silk producer, Étienne Léopold Trouvelot, in Medford, Massachusetts (Liebhold et al. 1989). While supplemental introductions have likely occurred over the last 150 years, microsatellite analyses point to this source as the main origin (Bogdanowicz et al. 1997). The severe bottleneck surrounding the introduction of the species has led to the conclusion that little genetic variation exists in gypsy moth population across North America (Wu et al. 2015). 
+
+Notes from AJE: This was not shown by Wu et al. (2015). In fact, European populations
+were about as diverse as NA populations (actually statistically 
+the same). There was a slight numerical decrease in things like effective number of alleles, but it was marginal and not significant. 
+This then implies that a severe bottleneck either did not happen OR population growth has resulted in a restoration of diversity. The
+latter is likely given that private alleles were noticed in the EXPANDING AND GROWING populations on the range edge. 
+Wu et al. (2015) did talk a lot about their belief in a bottleneck and their feelings about it, but based on my reading did
+in no way demonstrate one, unless they are referring to both European and NA populations relative to Asian populations. A quick inspection
+of their data tables reveals that heterozygosity is still quite high and almost numerically equal to Europe. 
+
+However, the current gypsy moth invasion front spans north into Canada, west into Minnesota, and as far south as North Carolina, and populations are experiencing very different selective pressures across this range based on climate and community composition. The combination of its wide geographic range, its known point of introduction, and its extremely well-documented spatial spread (Tobin et al. 2007) makes the North American gypsy moth an ideal model for examining the genetic architecture of an invasive species.
 
 Gypsy moths have a univoltine life cycle where caterpillar larvae hatch, grow until pupation, and emerge as adult moths in the spring and summer, laying eggs that overwinter in diapause. Hatch is generally timed with budburst of their preferred hosts, oak and aspen; however the gypsy moth is a generalist herbivore that will feed on more than 300 foliage hosts as larvae (Liebhold et al. 1995). Adults live between x and x days and do not feed during this time. Adult female \textit{L. dispar} are flightless and release pheromones to attract flying male mates (Doane and McManus 1981). Given the small window of opportunity to mate each year, the sucess of a gypsy moth population depends on the overlap of adult emergence between males and females (reference). Latitiudinal variation in developmental timing traits can impact this overlap, as well as the synchrony for larval developmental with prefered host trees.
 
@@ -100,7 +111,7 @@ species (\textit{Aedes}, \textit{Heliconius}, and \textit{Drosophila}) and the
 BUSCO Arthropoda lineage profile using a \texttt{tblastn} e-value cutoff of
 $0.001$.
 
-\subsection*{Sequence processing and variant calling} Sequencing of 192
+\subsection*{Sequence processing and variant calling} Sequencing of 170
 individual moths, exclusive of the one used for assembly,  as performed on
 reduced genomic DNA per~\cite{PARCHMAN:2012ca}. In total, two  Illumina HiSeq
 2500 lanes were sequenced. Bases with quality scores less than 33 were masked,
@@ -171,12 +182,8 @@ differentiation. All analysis was conducted using the \texttt{stats} and
 partial redundancy analysis (pRDA) to describe the effect of climate and
 geography on phenotypic trait values. We partitioned the variance due to climate
 and geography using standard variance partitioning methods \citep{Borcard:1992}.
-Geography was quantified using Moran eigenvector maps (MEMs) as determined using
-the \texttt{pcnm} function in the \texttt{vegan} ver. 2.2-1 library of R. We
-used all eigenvectors with positive eigenvalues to describe geography. Input to
-the \texttt{pcnm} function was a matrix of pairwise geographical distances among
-populations, where geographical distance was calculated as great circle
-distances (km) using the \texttt{geosphere} library in R.
+Geography was quantified using latitude and longitude, with both measures
+centered and standardized prior to analysis. 
 
 Patterns of genetic variation within and among populations were described using
 standard population genetic indices: observed ($H_{obs}$) and expected
@@ -191,7 +198,7 @@ with $\alpha = 0.05$.
 
 
 \subsection*{Genome-wide association analyses}
-(This section should be for phenotypes (piMASS) and environments (Bayenv2))
+(This section should be for phenotypes (gemma) and environments (Bayenv2))
 
 \subsection*{Genetic architecture and selection}
 TODO
