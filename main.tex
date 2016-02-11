@@ -55,7 +55,7 @@ adaptive potential and negatively affect fitness landscapes. These events
 include founder effects, genetic drift, population bottlenecks, and inbreeding
 [CITE].  Invasive species are particularly susceptible to reductions in allelic
 richness and heterozygosity due to these limiting processes. [KG: WHAT WAS
-INTENDED BY ``nd also varying selective regimes'' I DIDN'T WANT TO DELETE AND
+INTENDED BY ``and also varying selective regimes'' I DIDN'T WANT TO DELETE AND
 LOSE THE INTENTION OF THE SENTENCE]  The key to divulging the underlying
 mechanisms that change the genetic basis of fitness-related traits is to design
 experiments that directly test selection and local adaptation [STENGTHEN THIS
@@ -81,7 +81,7 @@ disequilibrium before GWAS
 
 When trying to equate phenotypic divergence of a trait among populations to
 genomic regions, many studies will expect the same pattern of high divergence
-within the genome. This analsysis is usually performed by looking for Fst
+within the genome. This analysis is usually performed by looking for Fst
 outliers, but there have been many cases of discordance between levels of
 differentiation among traits and their underlying loci (McKay/Latta2002).  High
 levels of phenotypic divergence can be observed with little to no
@@ -104,8 +104,8 @@ populations across the latitudinal extent of the invasive range.  Using a GWAS
 approach to identify loci associated with phenotypic variation, we assessed the
 differentiation of populations along this extent in terms of biologically
 consequential traits. GWAS has strong inferential capabilities where we could
-use associated SNP data to estimate multilocus parameters of heretability, Fst,
-Qst, and linkage disequilibrium through (Baysian mumbo jumbo).
+use associated SNP data to estimate multilocus parameters of heritability, Fst,
+Qst, and linkage disequilibrium through (Bayesian mumbo jumbo).
 
 \subsection*{Study System}
 
@@ -148,8 +148,8 @@ that will feed on more than 300 foliage hosts as larvae (Liebhold et al. 1995).
 Adults live between x and x days and do not feed during this time. Adult female
 \textit{L. dispar} are flightless and release pheromones to attract flying male
 mates (Doane and McManus 1981). Given the small window of opportunity to mate
-each year, the sucess of a gypsy moth population depends on the overlap of adult
-emergence between males and females (reference). Latitiudinal variation in
+each year, the success of a gypsy moth population depends on the overlap of adult
+emergence between males and females (reference). Latitudinal variation in
 developmental timing traits can impact this overlap, as well as the synchrony
 for larval developmental with prefered host trees.
 
@@ -191,12 +191,12 @@ mates.
 Genomic DNA extracted using Qiagen DNeasy Plant Mini kit (Qiagen, cat \# 69104)
 according to manufacturer's protocol.  The library was prepared and sequenced as
 a single run of paired-end reads on the Illumina HiSeq 2500 platform at the
-Virginia Commonwealth Univesrity Nucleic Acids Research Facility. Quality was
+Virginia Commonwealth University Nucleic Acids Research Facility. Quality was
 initially assessed using FastQC \citep{fastqc} and subsequently processed with
-IPython~\citep{Perez:2007hy} and BioPytho~\citep{Cock:2009hj}. The read pairs
-were each evaluated along sliding windows of 5 bp.  If the mean score in this
-window was below a score of 30, the read was trimmed at that beginning of the
-window. If the shortened read was less than 50\% of the length of the original
+IPython \citep{Perez:2007hy} and BioPython \citep{Cock:2009hj}. The read pairs
+were each evaluated along sliding windows of 5 base pairs (bp).  If the mean score 
+in this window was below a score of 30, the read was trimmed at that beginning of 
+the window. If the shortened read was less than 50\% of the length of the original
 read, it was discarded along with its pair. Additionally, if 20\% of the bases
 in a read had quality values less than 30, it was discarded along with its pair.
 
@@ -226,9 +226,9 @@ per~\cite{Yun:2014dn},  using \texttt{fastq\_masker} from the FastX toolkit
 
 Masked fastq files were mapped using \texttt{bowtie2}~\citep[][version
 2.2.4]{Langmead:2012jh}, using flags  \texttt{--local --very-sensitive-local}.
-The resulting  SAM files were converteted to their binary equivalent, sorted,
+The resulting  SAM files were converted to their binary equivalent, sorted,
 and indexed. To each of these indexed bam files, appropriate \texttt{RG} ID and
-sample information was added using \texttt{picard} \\
+sample information was added using \texttt{Picard} \\
 (\url{https://broadinstitute.github.io/picard}), version 1.112 to inform variant
 calling.
 
@@ -237,19 +237,19 @@ indexed using \texttt{samtools} \citep[][version 1.2]{Li:2009ka}.  Sequence
 variants were called using samtools and bcftools \citep[][version
 1.2]{Li:2009ka} with individual  ploidy level set to \texttt{2} for all samples.
 The variants were filtered  using \texttt{vcftools}~\citep[][version
-0.1.14]{Danecek:2011gz}, such that only diallelic single nucleotide
+0.1.14]{Danecek:2011gz}, such that only biallelic single nucleotide
 polymorphisms (SNPs) remained in cases where a variant call was present in at
-least 50\% of the samples and the minimum gentoype quality (\texttt{--minQG}) of
+least 50\% of the samples and the minimum genotype quality (\texttt{--minQG}) of
 3. An additional filtering using \texttt{vcfutils.pl} (from \texttt{bcftools})
 was performed to only keep sites with mapping qualities of at least 10
 (\texttt{varFilter -Q 10}). The vcf file was then double checked to ensure all
 reference and alternate alleles were single nucleotides before imputation with
-\texttt{Beagle} \citep[][version 4.0, r1399]{Browning:2007ge}.  The impuation
+\texttt{Beagle} \citep[][version 4.0, r1399]{Browning:2007ge}.  The imputation
 was performed on 30 CPUs using the following non-default parameters:
 \texttt{phase-its=20, burnin-its=20, impute-its=20}.
 
 For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
-was performed.  First, \texttt{VCFtools} was used to include only bialleleic
+was performed.  First, \texttt{VCFtools} was used to include only biallelic
 SNPs (\texttt{--min-alleles=2, --max-alleles=2}), SNPs with minor allele
 frequency (MAF) of at least 1\% (\texttt{--mac=0.01}) and SNPs present in at
 least 50\% of the samples (\texttt{--max-missing=0.5}).  Additional MAF
@@ -264,7 +264,7 @@ to be valid if they passed filtering in both the IMP and NI datasets. Finally,
 SNPs were oriented according to dosage of globally-minor allele, rather than
 alternate allele with respect to the assembly. In other words, in a file of
 genotypes where 0/1/2 would normally represent counts of alternate allele in a
-diploid genotype,  (as output by \texttt{vcftools}), 0/1/2 were recoded to
+diploid genotype,  (as output by \texttt{VCFtools}), 0/1/2 were recoded to
 represent counts of the minor allele (i.e., a genotype of 2 indicates two copies
 of the globally minor allele). This ``swapped'' representation was then used as
 input for downstream analysis.
