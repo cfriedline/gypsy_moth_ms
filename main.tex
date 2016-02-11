@@ -194,11 +194,12 @@ a single run of paired-end reads on the Illumina HiSeq 2500 platform at the
 Virginia Commonwealth University Nucleic Acids Research Facility. Quality was
 initially assessed using FastQC \citep{fastqc} and subsequently processed with
 IPython \citep{Perez:2007hy} and BioPython \citep{Cock:2009hj}. The read pairs
-were each evaluated along sliding windows of 5 base pairs (bp).  If the mean score 
-in this window was below a score of 30, the read was trimmed at that beginning of 
-the window. If the shortened read was less than 50\% of the length of the original
-read, it was discarded along with its pair. Additionally, if 20\% of the bases
-in a read had quality values less than 30, it was discarded along with its pair.
+were each evaluated along sliding windows of 5 base pairs (bp).  If the mean
+score in this window was below a score of 30, the read was trimmed at that
+beginning of the window. If the shortened read was less than 50\% of the length
+of the original read, it was discarded along with its pair. Additionally, if
+20\% of the bases in a read had quality values less than 30, it was discarded
+along with its pair.
 
 \subsection*{Draft assembly}
 
@@ -299,8 +300,8 @@ and all SNPs combined using the \texttt{hierfstat} library in R. Confidence
 intervals ($95\%$) for multilocus estimates were generated using bootstrapping
 across SNPs ($n = 1,000$). Genetic structure among populations was also assessed
 using principal components analysis (PCA) following~\cite{Patterson:2006}.
-Significance of principal components (PCs) was determined using Tracy-Widom tests
-with $\alpha = 0.05$.
+Significance of principal components (PCs) was determined using Tracy-Widom
+tests with $\alpha = 0.05$.
 
 
 \subsection*{Genome-wide association analyses}
