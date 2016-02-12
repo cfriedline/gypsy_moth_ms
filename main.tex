@@ -242,7 +242,7 @@ mates (Doane and McManus 1981). Given the small window of opportunity to mate
 each year, the success of a gypsy moth population depends on the overlap of adult
 emergence between males and females (reference). Latitudinal variation in
 developmental timing traits can impact this overlap, as well as the synchrony
-for larval developmental with prefered host trees.
+for larval developmental with preferred host trees.
 
 The well-developed pheromone signaling system of the gypsy moth has been
 exploited by forest pest managers for decades as an assessment tool for trapping
@@ -375,13 +375,10 @@ estimation of variance components. Variance components were used to construct a
 measure of phenotypic differentiation akin to hierarchical $F$-statistics.
 Specifically, we used the ratio of the variance due to population identifiers to
 the total phenotypic variance ($P_{ST}$) as a measure of phenotypic
-differentiation. All analysis was conducted using the \texttt{stats} and
-\texttt{lme4} libraries of R ver. 3.1.2 (R Core Team 2014). Lastly, we used
-partial redundancy analysis (pRDA) to describe the effect of climate and
-geography on phenotypic trait values. We partitioned the variance due to climate
-and geography using standard variance partitioning methods \citep{Borcard:1992}.
-Geography was quantified using latitude and longitude, with both measures
-centered and standardized prior to analysis.
+differentiation. Parametric bootstrapping ($n = 1000$ replicates) was used
+to derive confidence intervals around point estimates of $P_{ST}$. All analysis 
+was conducted using the \texttt{stats} and
+\texttt{lme4} libraries of R ver. 3.1.2 (R Core Team 2014). 
 
 Patterns of genetic variation within and among populations were described using
 standard population genetic indices: observed ($H_{obs}$) and expected
@@ -393,6 +390,16 @@ across SNPs ($n = 1,000$). Genetic structure among populations was also assessed
 using principal components analysis (PCA) following~\cite{Patterson:2006}.
 Significance of principal components (PCs) was determined using Tracy-Widom
 tests with $\alpha = 0.05$.
+
+Lastly, we used redundancy analysis (RDA) to describe the effects of climate, 
+genetics, and geography on phenotypic trait values. We partitioned the variance 
+using standard variance partitioning methods \citep{Borcard:1992}.
+Geography was quantified using latitude and longitude, with both measures
+centered and standardized prior to analysis, while climate and genetics were
+quantified using PCs derived from PCA. For climate data, PCs with eigenvalues 
+$> 1$ were retained for further analysis. For genetic data, PCs that were
+associated with statistically significant eigenvalues, as assessed using
+Tracy-Widom tests, were retained for further analysis.
 
 
 \subsection*{Genome-wide association analyses}
@@ -407,51 +414,15 @@ TODO
 TODO
 
 \subsection*{Patterns of phenotypic and genetic variation}
-Summary of results for phenotypes:
+Phenotypic variation across samples varied by population, with
+population labels statistically differentiating multivariate trait
+values (MANOVA: Wilk's $\lambda = 0.663, F_{5,164} = 4.798,P = 1.149e-08$).
+Inspection of results from one-ways ANOVAs revealed that this effect
+was driven largely by total development time (ANOVA: ), with mass being 
+marginally differentiated among populations (ANOVA: ). No effect
+was apparent for pupal development time. These results were consistent
+with point estimates for 
 
-The MANOVA was significant $F_{15,444.85} = 4.8216, P = 1.022e-08$
-
-The same result is obtained using Pillai's trace (P val is a tad larger)
-
-One-way ANOVAs: significant for mass ($F_{5,163} = 3.0944, P = 0.01073$) and TDT
-($F_{5,163} = 8.266, P = 5.545e-07$). For TDT, the pattern is roughly clinal,
-with larger TDTs in the south and smaller TDTs in the north. The exception was
-the QC32 pop which was almost as large as NY.\@ For mass, the pattern is less
-clear, with slightly larger masses in the south, but the result is driven
-primarily by the low mass in QC93. Moreover, there was an almost significant
-regression between mass and TDT, so that higher TDT was associated with higher
-mass.
-
-Pst values (closer to one means more variance due to among pop effects):
-
-mass: 0.07019467
-
-pdt: 0.03702012
-
-tdt: 0.2270976
-
-If heritability (h2) is low PST is approximately QST or larger (as long as pop
-variance is constant). If true, tdt is likely more differentiated than FST,
-which implies local adaptation.
-
-The RDA analyses were significant for the full model (clim + geog) and pure
-clim, which means that clim and the confounded effects of clim and geog were
-statistically significant predictors of phens.
-
-stats: $F_{5,163} = 4.2884, P = 0.001$ for full model; $F_{3,163} = 4.2105, P =
-0.001$ for $clim\|geog$. Keep in mind that F-values for this are approximate so
-the P-value is determined via permutations following Legendre and Legendre (cite
-their eco-babble book here).
-
-The $R^{2}$ for the full RDA model was $0.1153$. This is the total explainable
-variance (i.e., inertia). Also, keep in mind that most of the clim and geog
-signal is among pops, so the explainable variance is really about the
-differences among populations.
-
-Variance partitioning revealed that $58.90\%$ of the explainable variance in
-phens was due to climate and that the remainder of the explainable variance was
-due to the joint effects (i.e., confounded effects) of climate and geography
-($41.10\%$).
 
 \subsection*{Genome-wide association analyses}
 TODO
