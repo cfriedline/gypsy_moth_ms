@@ -1,33 +1,123 @@
-\documentclass[fleqn,11pt]{wlpeerj}
-\usepackage{lineno}
+\documentclass[smallextended]{svjour3}
+\smartqed%
+\usepackage{simplemargins}
 \usepackage{url}
-\usepackage[htt]{hyphenat}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{siunitx}
+\setallmargins{1in}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage[colorlinks=false,breaklinks]{hyperref}
+\usepackage{lineno}
+\linenumbers%
+\listfiles%
+
+% make subfigure labels capitalized
+\renewcommand{\thesubfigure}{(\Alph{subfigure})}
+
+%setup supplement
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}
+        \renewcommand{\thesection}{S\arabic{section}}
+        \renewcommand{\thesubsection}{S\arabic{subsection}}
+     }
+
+%set citation punctuation according to website guidelines
+\bibpunct[;]{(}{)}{;}{a}{}{,}%
+
+\RequirePackage{fix-cm}
+
+\begin{document}
+
+\doublespace%
 
 \title{The ecological genomics of gypsy moth invasion along a latitudinal
 gradient}
 
-\author[1]{Christopher J. Friedline}
-\author[1]{Trevor M. Faske}
-\author[1]{Erin M. Hobson}
-\author[2]{Dylan Parry}
-\author[1]{Derek M. Johnson}
-\author[3]{Lily M. Thompson}
-\author[3,*]{Kristine L. Grayson}
-\author[1,*,\textdagger]{Andrew J. Eckert}
-\affil[1]{Department of Biology, Virginia Commonwealth University}
-\affil[2]{College of Environmental Science and Forestry, State University of
-New York}
-\affil[3]{Department of Biology, University of Richmond}
-\affil[*]{Authors contributed equally}
-\affil[ \textdagger]{Corresponding author}
+\titlerunning{Gypsy moth invasion}
 
-\keywords{}
+\author{Christopher J.\ Friedline \and
+Trevor M.\ Faske \and
+Erin M.\ Hobson \and
+Brandon M.\ Lind \and
+Dylan Parry \and
+Derek M.\ Johnson \and
+Lily M.\ Thompson \and
+Kristine M.\ Grayson \and
+Andrew J.\ Eckert*
+}
+
+\institute{C. Friedline \at%
+Department of Biology,  Virginia Commonwealth University, Richmond, VA  23284,
+\email{cfriedline@vcu.edu}
+\and
+T. Faske \at%
+Department of Biology, Virginia Commonwealth University, Richmond, VA  23284,
+\email{fasket@vcu.edu}
+\and
+E. Hobson \at%
+Department of Biology, Virginia Commonwealth University, Richmond, VA  23284,
+\email{hobsonem@vcu.edu}
+\and
+B. Lind \at%
+Department of Biology, Virginia Commonwealth University, Richmond, VA  23284,
+\email{lindb@vcu.edu}
+\and
+D. Parry \at%
+Environmental and Forest Biology, State University of New York, Syracuse, NY,
+\email{dparry@esf.edu}
+\and
+D. Johsson \at%
+Department of Biology, Virginia Commonwealth University, Richmond, VA  23284,
+\email{dmjohnson@vcu.edu}
+\and
+L. Thompson \at%
+Department of Biology, University of Richmond, Richmond, VA  23173,
+\email{lthomps2@richmond.edu}
+\and
+K. Grayson \at%
+Department of Biology, University of Richmond, Richmond, VA  23173,
+\email{lthomps2@richmond.edu}
+\and
+A. Eckert (*Corresponding author) \at%
+Department of Biology, Virginia Commonwealth University, Richmond, VA  23284,
+\email{aeckert2@vcu.edu}
+}
+
+\date{Received: date / Accepted: date}
+
+
+% \author[1]{Christopher J. Friedline}
+% \author[1]{Trevor M. Faske}
+% \author[1]{Erin M. Hobson}
+% \author[2]{Dylan Parry}
+% \author[1]{Derek M. Johnson}
+% \author[3]{Lily M. Thompson}
+% \author[3,*]{Kristine L. Grayson}
+% \author[1,*,\textdagger]{Andrew J. Eckert}
+% \affil[1]{Department of Biology, Virginia Commonwealth University}
+% \affil[2]{College of Environmental Science and Forestry, State University of
+% New York}
+% \affil[3]{Department of Biology, University of Richmond}
+% \affil[*]{Authors contributed equally}
+% \affil[ \textdagger]{Corresponding author}
+
 
 \begin{abstract}
 TODO
+
+\keywords{}
+
 \end{abstract}
 
-\begin{document}
+
 
 \flushbottom
 \maketitle
@@ -376,21 +466,39 @@ TODO
 TODO
 
 
+\begin{acknowledgements}
+  The authors would like to thank the staff at the USDA Institute of Forest
+  Genetics, the VCU Nucleic Acids Research Facility, and the VCU Center for High
+  Performance Computing.  In addition, we would like to thank Tom Blush and Tom
+  Burt for help in obtaining seeds. Funding for this project was made available
+  to AJE via start-up funds from Virginia Commonwealth University. CJF was
+  supported by the National Science Foundation (NSF) National Plant Genome
+  Initiative (NPGI): Postdoctoral Research Fellowship in Biology (PRFB) FY 2013
+  Award \#NSF-NPGI-PRFB-1306622.
+\end{acknowledgements}
+
+\clearpage
+\bibliographystyle{spbasic}
+\bibliography{refs}
+
+
+
+
 \section*{Figures}
 \begin{figure}[t]
-  \centering
-  \includegraphics[width=\textwidth]{rda_fig}
-  \caption{TODO}
-  \label{fig:rda}
+\centering
+\includegraphics[width=\textwidth]{rda_fig}
+\caption{TODO}
+\label{fig:rda}
 \end{figure}
 
 \section*{Tables}
 TODO
 
-\section*{Supplementary material}
+
+\beginsupplement%
 TODO
 
-\clearpage
-\bibliography{refs}
+
 
 \end{document}
