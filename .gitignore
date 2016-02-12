@@ -164,3 +164,6 @@ pythontex-files-*/
 
 # Latexian
 TSWLatexianTemp*
+
+# exclude figures
+!*fig.pdf
