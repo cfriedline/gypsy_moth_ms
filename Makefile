@@ -6,3 +6,8 @@ clean:
 
 github:
 	git push github master
+
+overleaf:
+	git push
+
+make push: overleaf github
