@@ -356,7 +356,7 @@ Depth across samples (DP), Alternate allele call quality (QUAL), and RMS mapping
 quality values (MQ), reported in the VCF file were examined.  An additional
 filtering step was conducted using \texttt{vcfutils.pl} (from \texttt{bcftools})
 to remove SNPs with MQ values less than 10.  Monomorphic SNPs were removed as
-well as SNPs with $F_{IS} < -0.5$ or $F_{IS} > 0.5$.  We only considered SNPs
+well as SNPs with $F < -0.5$ or $F > 0.5$.  We only considered SNPs
 to be valid if they passed filtering in both the IMP and NI datasets. Finally,
 SNPs were oriented according to dosage of globally-minor allele, rather than
 alternate allele with respect to the assembly. In other words, in a file of
@@ -387,7 +387,7 @@ was conducted using the \texttt{stats} and
 
 Patterns of genetic variation within and among populations were described using
 standard population genetic indices: observed ($H_{obs}$) and expected
-($H_{Exp}$) heterozygosities, Wright's inbreeding coefficient ($F$), and
+($H_{exp}$) heterozygosities, Wright's inbreeding coefficient ($F$), and
 hierarchical $F$-statistics (e.g. $F_{ST}$). Estimates were made for each SNP
 and all SNPs combined using the \texttt{hierfstat} library in R. Confidence
 intervals ($95\%$) for multilocus estimates were generated using bootstrapping
@@ -398,7 +398,7 @@ tests with $\alpha = 0.05$.
 
 Lastly, we used redundancy analysis (RDA) to describe the effects of climate,
 genetics, and geography on phenotypic trait values. We partitioned the variance
-using standard variance partitioning methods \citep{Borcard:1992}.
+using standard variance partitioning methods \citep{Borcard:1992, Liu:1997}.
 Geography was quantified using latitude and longitude, with both measures
 centered and standardized prior to analysis, while climate and genetics were
 quantified using PCs derived from PCA. For climate data, PCs with eigenvalues
@@ -430,23 +430,33 @@ was driven largely by total development time (ANOVA: $F_{5,164} = 8.354,P = 4.65
 with mass marginally differentiated among populations (ANOVA: $F_{5,164} = 3.120,P = 0.010$). 
 No effect was apparent for pupal development time. These results were consistent
 with point estimates for $P_{ST}$, where population labels accounted
-for $22.88\%$ ($95\% CI: 1.18 - 46.48\%$) of the variance for total development
-time and only $7.07\%$ ($95\% CI: 0.00 - 20.13\%$) of the variance for mass.
+for $22.88\%$ ($95\%$ CI: $1.18 - 46.48\%$) of the variance for total development
+time and only $7.07\%$ ($95\%$ CI: $0.00 - 20.13\%$) of the variance for mass.
 
 <Chris: brief summary about genetic PCA and FST here, for example PC1 is +correlated
 with lat and long. PC2 is -correlated with long. Also, you should look for correlations
 of lat and long with obs and exp heterozygosity within pops.>
 
 Phenotypic trait values were significantly correlated with geography, climate, and genetic
-variation (RDA: $F_{19,150} = 2.369, P = 1.0e-04, R^2 = 0.231$; Figure 2). The first two
-RDA axes explained $86.60\%$ of the total explainable variance (i.e. $86.60\% of R^2 = 0.231$).
-The first two RDA axes were dominated by mass and total development time, with the first axis reflecting
+variation (RDA: $F_{19,150} = 2.369, P = 1.0e-04, R^2 = 0.231$; Figure 2). All three RDA
+axes were statistically significant (Permutation-based ANOVA: $P < 0.001$).
+The first two RDA axes explained $86.60\%$ of the total explainable variance (i.e. $86.60\%$ of $R^2 = 0.231$).
+These two axes were dominated by mass and total development time, with the first axis reflecting
 the correlation between mass and total development time and the second axis differentiating these two traits. The
-remainder of the explainable variance was attributed to third axis, which was dominated by pupal duration time.
+remainder of the explainable variance was attributed to third axis, which was dominated by pupal duration time. 
+The first RDA axis was highly correlated with environmental PC 1, genetic PCs 1 through 3, 
+latitude and longitude, whereas the second RDA axis was most correlated with environmental PC1,
+genetic PCs 4 and above, and latitude (Figure 2). 
 
 Partitioning the effects of each type of explanatory variable on phenotypic trait variation revealed that genetic
-variation and geography had the largest pure effects ( ). Climate variation was confounded with either of these
-two variable types. 
+variation and geography had the largest pure effects (Figure 2B). Of these, the genetic PCs accounted for the
+vast majority (i.e. $68.74\%$) of the total effect. Testing the statistical significance of the partial 
+RDA (pRDA) models used to estimate pure effects of each variable was consistent with the magnitudes of explanatory power. 
+The pRDA models for genetic variation conditional on climate and geography and geography conditional on genetic
+variation and climate were both statistically significant ($P < 0.006, R^2 > 0.035$), 
+whereas the model for climate conditional on genetic variation and geography 
+was not ($F_{2,150} = 1.384, P = 0.223, R^2 = 0.014$). The effects of climate on phenotypic 
+trait variation was thus small and confounded with either genetic variation ($4.72\%$) or geography ($3.08\%$).
 
 
 \subsection*{Genome-wide association analyses}
