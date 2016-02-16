@@ -318,6 +318,11 @@ For \texttt{QUAST}, the software was executed using the following options
 from both \texttt{BUSCO} and \texttt{QUAST} were used to determine which
 assembly to use for downstream analysis.
 
+The assembly as aligned using BLASTX \citep[][version 2.2.30+]{Camacho:2009fc}
+to genes from \textit{Bombyx mori} (June 2, 2015) and  \textit{Plutella
+xylostella} (March 13, 2015), keeping at most five target sequences from each
+geneme with alignments having e-values less than $10^{-5}$.
+
 
 \subsection*{Sequence processing and variant calling} Sequencing of 170
 individual moths, exclusive of the one used for assembly,  as performed on
@@ -334,10 +339,8 @@ sample information was added using \texttt{Picard} \\
 (\url{https://broadinstitute.github.io/picard}), version 1.112 to inform variant
 calling.
 
-Duplicates were marked using \texttt{Picard} and the resulting files were
-indexed using \texttt{samtools} \citep[][version 1.2]{Li:2009ka}.  Sequence
-variants were called using samtools and bcftools \citep[][version
-1.2]{Li:2009ka} with individual  ploidy level set to \texttt{2} for all samples.
+Sequence variants were called using samtools and bcftools \citep[][version
+1.3]{Li:2009ka} with individual  ploidy level set to \texttt{2} for all samples.
 The variants were filtered  using \texttt{vcftools}~\citep[][version
 0.1.14]{Danecek:2011gz}, such that only biallelic single nucleotide
 polymorphisms (SNPs) remained in cases where a variant call was present in at
@@ -357,7 +360,7 @@ frequency (MAF) of at least 1\% (\texttt{--mac=0.01}) and SNPs present in at
 least 50\% of the samples (\texttt{--max-missing=0.5}).  Additional MAF
 (correcting for  finite population size) and percent missing filtering was done
 using Python following removal of duplicate samples from the variant data and
-Depth across samples (DP), Alternate allele call quality (QUAL), and RMS mapping
+depth across samples (DP), Alternate allele call quality (QUAL), and RMS mapping
 quality values (MQ), reported in the VCF file were examined.  An additional
 filtering step was conducted using \texttt{vcfutils.pl} (from \texttt{bcftools})
 to remove SNPs with MQ values less than 10.  Monomorphic SNPs were removed as
@@ -399,7 +402,7 @@ intervals ($95\%$) for multilocus estimates were generated using bootstrapping
 across SNPs ($n = 1,000$). Genetic structure among populations was also assessed
 using principal components analysis (PCA) following~\cite{Patterson:2006}.
 Significance of principal components (PCs) was determined using Tracy-Widom
-tests with $\alpha = 0.05$.
+tests with $\alpha = 0.05$ \citep{Patterson:2006}.
 
 Lastly, we used redundancy analysis (RDA) to describe the effects of climate,
 genetics, and geography on phenotypic trait values. We partitioned the variance
@@ -413,7 +416,24 @@ Tracy-Widom tests, were retained for further analysis.
 
 
 \subsection*{Genome-wide association analyses}
-(This section should be for phenotypes (gemma) and environments (Bayenv2))
+
+Correlations between allele frequencies and environmental variables were
+evaluated using \texttt{Bayenv} \citep[][version 2.0]{Gunther:2013ik,COOP:2010ke}.  Bayes
+factors and correlation coefficients were evalated for each SNP using
+\num{100000} MCMC inerations.  The covariance structure among populuations was
+obtained from final variance-covariance matrix output, sampled every 500 steps
+over \num{100000} iterations.  MCMC convergence was assessed by sequential
+matrix-matrix  correlations.
+
+Genotype-phenotype estimates were calculated using Bayesian Sparse Linear Mixed
+Model (BSLMM) implemented in \texttt{GEMMA} \citep[][version
+0.94.1]{Zhou:2013fh}.  Effect of  genotype on phenotypes, after correcting for
+population structure with PCA and normal-quantile transformed, were evalated
+across four sepearte MCMC chains of \num{100000000} generations, sampled  every
+1000 steps.  Convergence was evaluated using the \texttt{coda} package in R
+\citep[][version 0.18.1]{coda} using, effective sample size ($> 100$) estimates,
+trace plots and visual examination of the posterior distributions.
+
 
 \subsection*{Genetic architecture and selection}
 TODO
