@@ -432,7 +432,9 @@ population structure with PCA and normal-quantile transformed, were evalated
 across four sepearte MCMC chains of \num{100000000} generations, sampled  every
 1000 steps.  Convergence was evaluated using the \texttt{coda} package in R
 \citep[][version 0.18.1]{coda} using, effective sample size ($> 100$) estimates,
-trace plots and visual examination of the posterior distributions.
+trace plots and visual examination of the posterior distributions. Posterior
+effect estimates for each SNP were estimated as the harmonic mean of values
+across each chain.
 
 
 \subsection*{Genetic architecture and selection}
