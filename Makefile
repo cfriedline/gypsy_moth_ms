@@ -10,4 +10,4 @@ github:
 overleaf:
 	git push
 
-make push: overleaf github
+push: overleaf github
