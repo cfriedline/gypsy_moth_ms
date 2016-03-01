@@ -284,14 +284,17 @@ mates.
 
 \subsection*{Library preparation and sequencing}
 
-Genomic DNA extracted using Qiagen DNeasy Blood and Tissue kits (Qiagen, cat \# 69581)
-according to manufacturer's protocol.  The library was prepared and sequenced as
-a single run of paired-end reads on the Illumina HiSeq 2500 platform at the
-Virginia Commonwealth University Nucleic Acids Research Facility. Quality was
-initially assessed using FastQC \citep{fastqc} and subsequently processed with
+Total genomic DNA was extracted using Qiagen DNeasy Blood and Tissue kits (Qiagen, cat \# 69581)
+according to manufacturer's protocol from 171 gypsy moths. A reference assembly was constructed
+from one of these moths, while the other 170 moths were subjected to a double digest restriction site
+associated DNA sequencing (ddRADseq) protocol \citep{PARCHMAN:2012ca}.
+A single run of paired-end reads on the Illumina HiSeq 2500 platform at the
+Virginia Commonwealth University Nucleic Acids Research Facility was used to generate
+data for the reference assembly. Quality was initially assessed using 
+FastQC \citep{fastqc} and subsequently processed with
 IPython \citep{Perez:2007hy} and BioPython \citep{Cock:2009hj}. The read pairs
 were each evaluated along sliding windows of 5 base pairs (bp).  If the mean
-score in this window was below a score of 30, the read was trimmed at that
+quality score in this window was below a score of 30, the read was trimmed at that
 beginning of the window. If the shortened read was less than 50\% of the length
 of the original read, it was discarded along with its pair. Additionally, if
 20\% of the bases in a read had quality values less than 30, it was discarded
@@ -299,9 +302,7 @@ along with its pair.
 
 \subsection*{Draft assembly}
 
-An assembly was produced for the purpose of variant calling and is not
-considered as a candidate for complete genomic assembly. The quality-filtered
-reads from the paired-end sequencing library was used as input into
+The quality-filtered reads from the paired-end sequencing library were used as input into
 \texttt{MaSuRCA} \citep[][versions 2.3.2, 3.1.3]{Zimin:2013kn}, with the
 following parameters changed from the defaults: mean/standard deviation of read
 length: 400/60, use linking mates: 1: cgwErrorRate: 0.15.  Quality of the
