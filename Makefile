@@ -11,3 +11,6 @@ overleaf:
 	git push
 
 push: overleaf github
+
+tables: 
+	pandoc --from=docx --to=latex tables.docx
