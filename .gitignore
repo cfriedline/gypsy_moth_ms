@@ -165,9 +165,14 @@ pythontex-files-*/
 # Latexian
 TSWLatexianTemp*
 
+#office docs
+*.docx
+*.xlsx
+
 # exclude figures
 !*fig.pdf
 
+#include these figures
 !not_imputed.pdf
 !imputed.pdf
 !rda_fig.pdf
