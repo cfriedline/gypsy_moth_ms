@@ -167,3 +167,6 @@ TSWLatexianTemp*
 
 # exclude figures
 !*fig.pdf
+
+!not_imputed.pdf
+!imputed.pdf
