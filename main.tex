@@ -8,12 +8,14 @@
 \setallmargins{1in}
 \usepackage{natbib}
 \usepackage{color}
-\usepackage{subfigure}
 \usepackage{booktabs}
 \usepackage{pdflscape}
 \usepackage[colorlinks=false,breaklinks]{hyperref}
+\usepackage{caption}
+\usepackage[labelformat=simple]{subcaption}
 \usepackage{lineno}
 \usepackage{longtable}
+
 \linenumbers%
 \listfiles%
 
@@ -567,6 +569,24 @@ TODO
 \include{gypsy_supplemental_stuff}
 
 \subsection*{Supplementary Figures}\label{ss:sfig}
+
+\begin{figure}
+\begin{minipage}[b]{.5\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{not_imputed}	
+	\subcaption{}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.5\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{imputed}	
+	\subcaption{}
+\end{minipage}
+\caption{Principal Component analysis of raw (A) and imputed (B) SNPs colored 
+by population.}
+\label{fig:pcas}
+\end{figure}
+
 
 \subsection*{Supplementary Tables}\label{ss:stab}
 
