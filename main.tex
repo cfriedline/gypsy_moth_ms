@@ -501,7 +501,12 @@ either genetic variation ($4.72\%$) or geography ($3.08\%$).
 
 
 \subsection*{Genome-wide association analyses}
-TODO
+Across four independent runs of $100e6$ steps, thinned every 1000 steps, GEMMA was assessed 
+for convergence using the \texttt{coda} \citep[][version 0.18.1]{coda} package in R. Trace plots and independent 
+draws from the posterior distribution of the hyperparameters indicated adequate mixing 
+($N_e >>> 100$). Additionally, convergence was confirmed using potential scale reduction factor 
+(PSRF) estimation which was 1.0 in all cases.  Summary statistics for each phenotype are shown 
+in Table \ref{tab:gemma}.
 
 \subsection*{Genetic architecture and selection}
 TODO
@@ -546,6 +551,15 @@ respectively.
 \label{fig:rda}
 \end{figure}
 
+\clearpage
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{gemma_effect}
+\caption{Polygenic (alpha) and sparse (beta) effects for each phenotype, as well 
+as posterior inclusion probability (PIP/gamma).}
+\label{fig:gemma_effect}
+\end{figure}
 \clearpage
 
 \section*{Tables}
