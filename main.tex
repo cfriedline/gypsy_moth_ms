@@ -168,41 +168,53 @@ multiple generations while keeping track of population pedigrees (Salvonian et
 al.2013, Hirschhorn/Daly 2005). Often, the traits linked to fitness are
 polygenic and identification of the genomic loci for these traits was nearly
 impossible until recent advancements in sequencing technologies. Coupling new
-genomic resources with classical approaches has vastly increased the inferential
-power of detecting polygenic adaptation. Reduced sequencing costs have also made
+genomic resources with classical approaches has vastly increased the
+inferential
+power of detecting polygenic adaptation. Reduced sequencing costs have also
+made
 genome-wide association studies (GWAS) possible for a large number of
 individuals and organisms in natural populations not previously possible. [FOR
 THIS AUDIENCE DO WE NEED TO INTRODUCE GWAS IN MORE DETAIL?]
 
-^^Maybe split this into two paragraphs and talk about Fst outliers and linkage
+^^Maybe split this into two paragraphs and talk about $F_{ST}$ outliers and
+linkage
 disequilibrium before GWAS
 
 When trying to equate phenotypic divergence of a trait among populations to
 genomic regions, many studies will expect the same pattern of high divergence
-within the genome. This analysis is usually performed by looking for Fst
+within the genome. This analysis is usually performed by looking for $F_{ST}$
 outliers, but there have been many cases of discordance between levels of
-differentiation among traits and their underlying loci (McKay/Latta2002).  High
+differentiation among traits and their underlying loci \citep{McKay:2002ek}. 
+High
 levels of phenotypic divergence can be observed with little to no
-differentiation within the genomic regions controlling these traits; thus making
-them undetectable in Fst outlier based studies (LeCorre and Kremer 2003).
-Conversely, in instances where there is little apparent phenotypic divergence in
-populations, there can be important variation in genetic structure that provides
+differentiation within the genomic regions controlling these traits; thus
+making
+them undetectable in $F_{ST}$ outlier based studies \citep{LeCorre:2003vi}.
+Conversely, in instances where there is little apparent phenotypic divergence
+in
+populations, there can be important variation in genetic structure that
+provides
 insights to the process of adaptive differentiation. Since polygenic traits are
-affected by multiple loci, the detection of selection is spread out over loci so
+affected by multiple loci, the detection of selection is spread out over loci
+so
 a single locus can appear to be neutral or nearly neutral. Thus, non-detection
 of selection at early stages could be evident at a single locus but there is
 expected to be strong correlations in allelic effects. This creates large
 covariances in allele frequencies of loci in the polygenic trait that becomes
-the main driver of Qst and when a trait is under divergent selection, Qst > Fst
-is expected of the underlying loci. (All Qst>=<Fst Papers, Kremer/LeCorre2012)
+the main driver of Qst and when a trait is under divergent selection, Qst >
+$F_{ST}$
+is expected of the underlying loci. (All Qst>=<$F_{ST}$ Papers,
+Kremer/LeCorre2012)
 
-In this study, we used the North American invasion of the European gypsy moth as
+In this study, we used the North American invasion of the European gypsy moth
+as
 a model to examine the genomic architecture of life history traits in
 populations across the latitudinal extent of the invasive range.  Using a GWAS
 approach to identify loci associated with phenotypic variation, we assessed the
 differentiation of populations along this extent in terms of biologically
 consequential traits. GWAS has strong inferential capabilities where we could
-use associated SNP data to estimate multilocus parameters of heritability, Fst,
+use associated SNP data to estimate multilocus parameters of heritability,
+$F_{ST}$,
 Qst, and linkage disequilibrium through (Bayesian mumbo jumbo).
 
 \subsection*{Study System}
@@ -218,22 +230,26 @@ little genetic variation exists in gypsy moth population across North America
 (Wu et al. 2015).
 
 Notes from AJE: This was not shown by Wu et al. (2015). In fact, European
-populations were about as diverse as NA populations (actually statistically  the
+populations were about as diverse as NA populations (actually statistically 
+the
 same). There was a slight numerical decrease in things like effective number of
 alleles, but it was marginal and not significant.  This then implies that a
 severe bottleneck either did not happen OR population growth has resulted in a
 restoration of diversity. The latter is likely given that private alleles were
 noticed in the EXPANDING AND GROWING populations on the range edge.  Wu et al.
 (2015) did talk a lot about their belief in a bottleneck and their feelings
-about it, but based on my reading did in no way demonstrate one, unless they are
+about it, but based on my reading did in no way demonstrate one, unless they
+are
 referring to both European and NA populations relative to Asian populations. A
-quick inspection of their data tables reveals that heterozygosity is still quite
+quick inspection of their data tables reveals that heterozygosity is still
+quite
 high and almost numerically equal to Europe.
 
 However, the current gypsy moth invasion front spans north into Canada, west
 into Minnesota, and as far south as North Carolina, and populations are
 experiencing very different selective pressures across this range based on
-climate and community composition. The combination of its wide geographic range,
+climate and community composition. The combination of its wide geographic
+range,
 its known point of introduction, and its extremely well-documented spatial
 spread (Tobin et al. 2007) makes the North American gypsy moth an ideal model
 for examining the genetic architecture of an invasive species.
@@ -241,28 +257,33 @@ for examining the genetic architecture of an invasive species.
 Gypsy moths have a univoltine life cycle where caterpillar larvae hatch, grow
 until pupation, and emerge as adult moths in the spring and summer, laying eggs
 that overwinter in diapause. Hatch is generally timed with budburst of their
-preferred hosts, oak and aspen; however the gypsy moth is a generalist herbivore
+preferred hosts, oak and aspen; however the gypsy moth is a generalist
+herbivore
 that will feed on more than 300 foliage hosts as larvae (Liebhold et al. 1995).
 Adults live between x and x days and do not feed during this time. Adult female
 \textit{L. dispar} are flightless and release pheromones to attract flying male
 mates (Doane and McManus 1981). Given the small window of opportunity to mate
-each year, the success of a gypsy moth population depends on the overlap of adult
+each year, the success of a gypsy moth population depends on the overlap of
+adult
 emergence between males and females (reference). Latitudinal variation in
 developmental timing traits can impact this overlap, as well as the synchrony
 for larval developmental with preferred host trees.
 
 The well-developed pheromone signaling system of the gypsy moth has been
-exploited by forest pest managers for decades as an assessment tool for trapping
+exploited by forest pest managers for decades as an assessment tool for
+trapping
 regimes to measure spread and abundance. Pheromone-based solutions have also
 been developed for management through the development of mating disruption
-treatments. These efforts specifically target male gypsy moths and the extensive
+treatments. These efforts specifically target male gypsy moths and the
+extensive
 data assessing the progression of the North American invasion front is based
 exclusively on male moth captures, as females are flightless and not detectable
 at the same spatial scale. Therefore, we focus our analysis on traits in male
 gypsy moths to maximize the utility of our results to researchers and forest
 managers.
 
-In many insect species, including the gypsy moth, larger individuals have higher
+In many insect species, including the gypsy moth, larger individuals have
+higher
 fecundity. In the gypsy moth, growth occurs entirely in the larval stage and
 climaxes just prior to pupation. A frequent measure of fitness for the gypsy
 moth is pupal mass, as this traits both represents growth during larval
@@ -286,17 +307,22 @@ mates.
 
 \subsection*{Library preparation and sequencing}
 
-Total genomic DNA was extracted using Qiagen DNeasy Blood and Tissue kits (Qiagen, cat \# 69581)
-according to manufacturer's protocol from 171 gypsy moths. A reference assembly was constructed
-from one of these moths, while the other 170 moths were subjected to a double digest restriction site
+Total genomic DNA was extracted using Qiagen DNeasy Blood and Tissue kits
+(Qiagen, cat \# 69581)
+according to manufacturer's protocol from 171 gypsy moths. A reference assembly
+was constructed
+from one of these moths, while the other 170 moths were subjected to a double
+digest restriction site
 associated DNA sequencing (ddRADseq) protocol \citep{PARCHMAN:2012ca}.
 A single run of paired-end reads on the Illumina HiSeq 2500 platform at the
-Virginia Commonwealth University Nucleic Acids Research Facility was used to generate
+Virginia Commonwealth University Nucleic Acids Research Facility was used to
+generate
 data for the reference assembly. Quality was initially assessed using 
 FastQC \citep{fastqc} and subsequently processed with
 IPython \citep{Perez:2007hy} and BioPython \citep{Cock:2009hj}. The read pairs
 were each evaluated along sliding windows of 5 base pairs (bp).  If the mean
-quality score in this window was below a score of 30, the read was trimmed at that
+quality score in this window was below a score of 30, the read was trimmed at
+that
 beginning of the window. If the shortened read was less than 50\% of the length
 of the original read, it was discarded along with its pair. Additionally, if
 20\% of the bases in a read had quality values less than 30, it was discarded
@@ -304,11 +330,14 @@ along with its pair.
 
 \subsection*{Draft assembly}
 
-The quality-filtered reads from the paired-end sequencing library were used as input to
-the \texttt{MaSuRCA} assembler \citep[][versions 2.3.2, 3.1.3]{Zimin:2013kn}, with the
+The quality-filtered reads from the paired-end sequencing library were used as
+input to
+the \texttt{MaSuRCA} assembler \citep[][versions 2.3.2, 3.1.3]{Zimin:2013kn},
+with the
 following parameters changed from the defaults: mean/standard deviation of read
 length: 400/60, use linking mates: 1: cgwErrorRate: 0.15.  Quality of the
-assembly was assessed using the statistics generated by the assembly process, as
+assembly was assessed using the statistics generated by the assembly process,
+as
 well as with the \texttt{BUSCO} \citep[][version 1.1b1]{Simao:2015kk} and
 \texttt{QUAST} \citep[][version 3.2]{Gurevich:2013je}. For \texttt{BUSCO}, the
 software was built automatically using a Docker image (see GitHub repository
@@ -338,15 +367,18 @@ Masked fastq files were mapped using \texttt{bowtie2}~\citep[][version
 The resulting  SAM files were converted to their binary equivalent, sorted,
 and indexed. To each of these indexed bam files, appropriate \texttt{RG} ID and
 sample information was added using \texttt{Picard}
-(\url{https://broadinstitute.github.io/picard}), version 1.112 to inform variant
+(\url{https://broadinstitute.github.io/picard}), version 1.112 to inform
+variant
 calling.
 
 Sequence variants were called using samtools and bcftools \citep[][version
-1.3]{Li:2009ka} with individual  ploidy level set to \texttt{2} for all samples.
+1.3]{Li:2009ka} with individual  ploidy level set to \texttt{2} for all
+samples.
 The variants were filtered  using \texttt{vcftools}~\citep[][version
 0.1.14]{Danecek:2011gz}, such that only biallelic single nucleotide
 polymorphisms (SNPs) remained in cases where a variant call was present in at
-least 50\% of the samples and the minimum genotype quality (\texttt{--minQG}) of
+least 50\% of the samples and the minimum genotype quality (\texttt{--minQG})
+of
 3. An additional filtering using \texttt{vcfutils.pl} (from \texttt{bcftools})
 was performed to only keep sites with mapping qualities of at least 10
 (\texttt{varFilter -Q 10}). The vcf file was then double checked to ensure all
@@ -355,16 +387,19 @@ reference and alternate alleles were single nucleotides before imputation with
 was performed on 30 CPUs using the following non-default parameters:
 \texttt{phase-its=20, burnin-its=20, impute-its=20}.
 
-For each set of imputed (IMP) and non-imputed (NI) SNPs, the following filtering
+For each set of imputed (IMP) and non-imputed (NI) SNPs, the following
+filtering
 was performed.  First, \texttt{VCFtools} was used to include only biallelic
 SNPs (\texttt{--min-alleles=2, --max-alleles=2}), SNPs with minor allele
 frequency (MAF) of at least 1\% (\texttt{--mac=0.01}) and SNPs present in at
 least 50\% of the samples (\texttt{--max-missing=0.5}).  Additional MAF
 (correcting for  finite population size) and percent missing filtering was done
 using Python following removal of duplicate samples from the variant data and
-depth across samples (DP), Alternate allele call quality (QUAL), and RMS mapping
+depth across samples (DP), Alternate allele call quality (QUAL), and RMS
+mapping
 quality values (MQ), reported in the VCF file were examined.  An additional
-filtering step was conducted using \texttt{vcfutils.pl} (from \texttt{bcftools})
+filtering step was conducted using \texttt{vcfutils.pl} (from
+\texttt{bcftools})
 to remove SNPs with MQ values less than 10.  Monomorphic SNPs were removed as
 well as SNPs with $F < -0.5$ or $F > 0.5$.  We only considered SNPs
 to be valid if they passed filtering in both the IMP and NI datasets. Finally,
@@ -372,23 +407,27 @@ SNPs were oriented according to dosage of globally-minor allele, rather than
 alternate allele with respect to the assembly. In other words, in a file of
 genotypes where 0/1/2 would normally represent counts of alternate allele in a
 diploid genotype,  (as output by \texttt{VCFtools}), 0/1/2 were recoded to
-represent counts of the minor allele (i.e., a genotype of 2 indicates two copies
+represent counts of the minor allele (i.e., a genotype of 2 indicates two
+copies
 of the globally minor allele). This ``swapped'' representation was then used as
 input for downstream analysis.
 
 \subsection*{Patterns of phenotypic and genetic variation}
 
 Values for each phenotypic trait were summarized  within populations using
-parametric summary statistics (i.e., means and variances). Differentiation among
+parametric summary statistics (i.e., means and variances). Differentiation
+among
 populations for phenotypic traits was assessed using Multivariate Analysis of
 Variance (MANOVA). Statistical significance of the MANOVA model was determined
 using Wilk's lambda as the test statistic and $\alpha = 0.05$. We subsequently
 used one-way Analysis of Variance (ANOVA) to assess differentiation separately
 for each phenotypic trait. We treated population identifiers as a fixed effect
-for statistical hypothesis testing ($\alpha = 0.05$), but as a random effect for
+for statistical hypothesis testing ($\alpha = 0.05$), but as a random effect
+for
 estimation of variance components. Variance components were used to construct a
 measure of phenotypic differentiation akin to hierarchical $F$-statistics.
-Specifically, we used the ratio of the variance due to population identifiers to
+Specifically, we used the ratio of the variance due to population identifiers
+to
 the total phenotypic variance ($P_{ST}$) as a measure of phenotypic
 differentiation. Parametric bootstrapping ($n = 1000$ replicates) was used
 to derive confidence intervals around point estimates of $P_{ST}$. All analysis
@@ -401,7 +440,8 @@ standard population genetic indices: observed ($H_{obs}$) and expected
 hierarchical $F$-statistics (e.g. $F_{ST}$). Estimates were made for each SNP
 and all SNPs combined using the \texttt{hierfstat} library in R. Confidence
 intervals ($95\%$) for multilocus estimates were generated using bootstrapping
-across SNPs ($n = 1,000$). Genetic structure among populations was also assessed
+across SNPs ($n = 1,000$). Genetic structure among populations was also
+assessed
 using principal components analysis (PCA) following~\cite{Patterson:2006}.
 Significance of principal components (PCs) was determined using Tracy-Widom
 tests with $\alpha = 0.05$ \citep{Patterson:2006}.
@@ -431,13 +471,17 @@ structure among populations was obtained from final variance-covariance matrix
 output, sampled every 500 steps over \num{100000} iterations.  MCMC convergence
 was assessed by sequential matrix-matrix correlations.
 
-Genotype-phenotype correlations were investigated using Bayesian Sparse Linear Mixed
+Genotype-phenotype correlations were investigated using Bayesian Sparse Linear
+Mixed
 Models (BSLMMs) implemented in \texttt{GEMMA} \citep[][version
-0.94.1]{Zhou:2013fh}.  Effects of  genotypes on phenotypes, after correcting for
-population structure with PCA and normal-quantile transformation, were evaluated
+0.94.1]{Zhou:2013fh}.  Effects of  genotypes on phenotypes, after correcting
+for
+population structure with PCA and normal-quantile transformation, were
+evaluated
 across four separate MCMC chains of \num{100000000} generations, sampled  every
 1000 steps.  Convergence was evaluated using the \texttt{coda} package in R
-\citep[][version 0.18.1]{coda} using, effective sample size ($> 100$) estimates,
+\citep[][version 0.18.1]{coda} using, effective sample size ($> 100$)
+estimates,
 trace plots and visual examination of the posterior distributions. Posterior
 effect estimates for each SNP were estimated as the harmonic mean of values
 across each chain.
@@ -457,9 +501,11 @@ with pupal duration time (Pearson's $r = 0.804$) and total development time
 (Pearson's $r = 0.782$).  Neither of these correlations, however, were
 statistically significant at $\alpha = 0.05$. Phenotypic trait values also
 varied across populations, with population labels statistically differentiating
-multivariate trait values (MANOVA: Wilk's $\lambda = 0.663, F_{5,164} = 4.798,P =
+multivariate trait values (MANOVA: Wilk's $\lambda = 0.663, F_{5,164} = 4.798,P
+=
 1.149$e-$08$). Inspection of results from one-way ANOVAs revealed that this
-effect was driven largely by total development time (ANOVA: $F_{5,164} = 8.354,P =
+effect was driven largely by total development time (ANOVA: $F_{5,164} =
+8.354,P =
 4.658$e-$07$), with mass marginally differentiated among populations (ANOVA:
 $F_{5,164} = 3.120,P = 0.010$). No effect was apparent for pupal development
 time. These results were consistent with point estimates for $P_{ST}$, where
@@ -467,7 +513,7 @@ population labels accounted for $22.88\%$ ($95\%$ CI: $1.18 - 46.48\%$) of the
 variance for total development time and only $7.07\%$ ($95\%$ CI: $0.00 -
 20.13\%$) of the variance for mass.
 
-<Chris: brief summary about genetic PCA and FST here, for example PC1 is
+<Chris: brief summary about genetic PCA and $F_{ST}$ here, for example PC1 is
 +correlated with lat and long. PC2 is -correlated with long. Also, you should
 look for correlations of lat and long with obs and exp heterozygosity within
 pops. Also state similarity between PCA with NI and IMP.>
@@ -477,35 +523,47 @@ and genetic variation (RDA: $F_{19,150} = 2.369, P = 1.0$e-$04, R^2 = 0.231$;
 Figure 2). All three RDA axes were statistically significant ($P < 0.001$). 
 The first two RDA axes explained $86.60\%$ of the total
 explainable variation (i.e. $86.60\%$ of $R^2 = 0.231$). These two axes were
-dominated by mass and total development time, with the first axis reflecting the
+dominated by mass and total development time, with the first axis reflecting
+the
 correlation between mass and total development time and the second axis
-differentiating these two traits. The remainder of the explainable variation was
+differentiating these two traits. The remainder of the explainable variation
+was
 attributed to third axis, which was dominated by pupal duration time. The first
-RDA axis was highly correlated with environmental PC 1, genetic PCs 1 through 3,
+RDA axis was highly correlated with environmental PC 1, genetic PCs 1 through
+3,
 latitude, and longitude, whereas the second RDA axis was most correlated with
 environmental PC1, genetic PCs 4 and above, and latitude (Figure 2).
 
 Partitioning the contribution of each type of variable to the overall
 explanatory power of the full RDA model revealed that
-genetic variation and geography had the largest pure effects on phenotypic trait
+genetic variation and geography had the largest pure effects on phenotypic
+trait
 variation (Figure 2B). Of these, genetic PCs accounted for the vast majority
 (i.e. $68.74\%$) of the total effect. Testing the statistical significance of
-the partial RDA (pRDA) models used to estimate pure effects of each variable was
-consistent with the magnitudes of explanatory power. The pRDA models for genetic
+the partial RDA (pRDA) models used to estimate pure effects of each variable
+was
+consistent with the magnitudes of explanatory power. The pRDA models for
+genetic
 variation conditional on geography and climate and geography conditional on
 genetic variation and climate were both statistically significant ($P < 0.006,
 R^2 > 0.035$), whereas the model for climate conditional on genetic variation
-and geography was not ($F_{2,150} = 1.384, P = 0.223, R^2 = 0.014$). The effects
+and geography was not ($F_{2,150} = 1.384, P = 0.223, R^2 = 0.014$). The
+effects
 of climate on phenotypic trait variation were thus small and confounded with
 either genetic variation ($4.72\%$) or geography ($3.08\%$).
 
 
 \subsection*{Genome-wide association analyses}
-Across four independent runs of $100e6$ steps, thinned every 1000 steps, GEMMA was assessed 
-for convergence using the \texttt{coda} \citep[][version 0.18.1]{coda} package in R. Trace plots and independent 
-draws from the posterior distribution of the hyperparameters indicated adequate mixing 
-($N_e >>> 100$). Additionally, convergence was confirmed using potential scale reduction factor 
-(PSRF) estimation which was 1.0 in all cases.  Summary statistics for each phenotype are shown 
+Across four independent runs of $100e6$ steps, thinned every 1000 steps, GEMMA
+was assessed 
+for convergence using the \texttt{coda} \citep[][version 0.18.1]{coda} package
+in R. Trace plots and independent 
+draws from the posterior distribution of the hyperparameters indicated adequate
+mixing 
+($N_e >>> 100$). Additionally, convergence was confirmed using potential scale
+reduction factor 
+(PSRF) estimation which was 1.0 in all cases.  Summary statistics for each
+phenotype are shown 
 in Table \ref{tab:gemma}.
 
 \subsection*{Genetic architecture and selection}
@@ -556,9 +614,12 @@ respectively.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\textwidth]{gemma_effect}
-\caption{Relatedness ($\alpha$) and sparse/main ($\beta$) effects for each phenotype, as well 
-as posterior inclusion probability (PIP/$\gamma$) and total effect ($\hat{b}$). Total effect for 
-each SNP $i$ is given by $\hat{b_i} = \beta_i\gamma_i + \alpha_i$. Values represent the arithmetic 
+\caption{Relatedness ($\alpha$) and sparse/main ($\beta$) effects for each
+phenotype, as well 
+as posterior inclusion probability (PIP/$\gamma$) and total effect ($\hat{b}$).
+Total effect for 
+each SNP $i$ is given by $\hat{b_i} = \beta_i\gamma_i + \alpha_i$. Values
+represent the arithmetic 
 mean of posterior values across all four chains.}
 \label{fig:gemma_effect}
 \end{figure}
@@ -567,33 +628,43 @@ mean of posterior values across all four chains.}
 \section*{Tables}
 
 \begin{longtable}[]{@{}lrrrr@{}}
-\caption{Location, read, and mapping data for study populations. Means for number of reads and 
-percent of reads mapped to the assembly are given along with standard deviation, in parentheses, and 
+\caption{Location, read, and mapping data for study populations. Means for
+number of reads and 
+percent of reads mapped to the assembly are given along with standard
+deviation, in parentheses, and 
 range, in brackets.}\\
 \toprule
 Population & Location & N Indiv. & N Reads & Perc.
 Mapping\tabularnewline
 \midrule
 \endhead
-NC & 36.449125, -76.024672 & 22 & \num{1400657} (\num{703914}) {[}\num{163320}, \num{3565646}{]}
+NC & 36.449125, -76.024672 & 22 & \num{1400657} (\num{703914}) {[}\num{163320},
+\num{3565646}{]}
 & 91.8 (3.23) {[}83.6, 95.72{]}\tabularnewline
-NY & 42.897768, -74.094761 & 24 & \num{1226193} (\num{576189}) {[}\num{416034}, \num{2362196}{]}
+NY & 42.897768, -74.094761 & 24 & \num{1226193} (\num{576189}) {[}\num{416034},
+\num{2362196}{]}
 & 90.5 (4.07) {[}81.4, 95.81{]}\tabularnewline
-QC32 & 47.250981, -79.406052 & 33 & \num{1278939} (\num{611137}) {[}\num{187605},
+QC32 & 47.250981, -79.406052 & 33 & \num{1278939} (\num{611137})
+{[}\num{187605},
 \num{2451373}{]} & 90.4 (4.27) {[}76, 96.16{]}\tabularnewline
-QC93 & 46.908260, -70.806107 & 28 & \num{1434978} (\num{632080}) {[}\num{60533}, \num{2818064}{]}
+QC93 & 46.908260, -70.806107 & 28 & \num{1434978} (\num{632080})
+{[}\num{60533}, \num{2818064}{]}
 & 88.8 (11.44) {[}36.8, 95.9{]}\tabularnewline
-VA1 & 38.657615, -77.463603 & 33 & \num{1335730} (\num{757754}) {[}\num{199649},
+VA1 & 38.657615, -77.463603 & 33 & \num{1335730} (\num{757754})
+{[}\num{199649},
 \num{3468582}{]} & 91.2 (3.98) {[}75.9, 96.17{]}\tabularnewline
-VA2 & 38.857470, -77.695003 & 33 & \num{1414848} (\num{549376}) {[}\num{490382}, \num{2751839}{]}
+VA2 & 38.857470, -77.695003 & 33 & \num{1414848} (\num{549376})
+{[}\num{490382}, \num{2751839}{]}
 & 90.1 (5.82) {[}70.4, 95.39{]}\tabularnewline
 \bottomrule
 \end{longtable}
 
 
 \begin{longtable}[]{@{}lrrrr@{}}
-\caption{BUSCO statistics for MaSuRCA assmebly of Gypsy Moth against three insect 
-datasets representing: complete single-copy, complete duplicated, fragmented, and 
+\caption{BUSCO statistics for MaSuRCA assmebly of Gypsy Moth against three
+insect 
+datasets representing: complete single-copy, complete duplicated, fragmented,
+and 
 missing BUSCOs. In all caeses, \num{2675} BUSCOs were searched.}\\
 \toprule
 & Complete & Duplicated & Fragmented & Missing\tabularnewline
@@ -639,7 +710,8 @@ GC (\%) & 35.71\tabularnewline
 \clearpage
 
 \begin{longtable}[]{@{}lllll@{}}
-\caption{GEMMA results (mean and standard deviation) across four MCMC chains.}\\
+\caption{GEMMA results (mean and standard deviation) across four MCMC
+chains.}\\
 \toprule
 & h & PVE & PGE & N\tabularnewline
 \midrule
