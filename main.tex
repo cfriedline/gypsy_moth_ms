@@ -164,8 +164,9 @@ and reciprocal transplant experiments. Such designs inform the genetic basis of
 selection and local adaptation by estimating fitness over an environmental
 gradient but are limited in non-model, non-plant organisms due to the
 feasibility of rearing natural populations in their natural environments over
-multiple generations while keeping track of population pedigrees (Salvonian et
-al.2013, Hirschhorn/Daly 2005). Often, the traits linked to fitness are
+multiple generations while keeping track of population pedigrees
+\citep{Savolainen:2013df, Hirschhorn:2005cka}. Often, the traits linked to
+fitness are
 polygenic and identification of the genomic loci for these traits was nearly
 impossible until recent advancements in sequencing technologies. Coupling new
 genomic resources with classical approaches has vastly increased the
@@ -432,7 +433,7 @@ the total phenotypic variance ($P_{ST}$) as a measure of phenotypic
 differentiation. Parametric bootstrapping ($n = 1000$ replicates) was used
 to derive confidence intervals around point estimates of $P_{ST}$. All analysis
 was conducted using the \texttt{stats} and
-\texttt{lme4} libraries of R ver. 3.1.2 (R Core Team 2014).
+\texttt{lme4} \texttt{R} libraries \citep[][version 3.1.2]{R:2015}
 
 Patterns of genetic variation within and among populations were described using
 standard population genetic indices: observed ($H_{obs}$) and expected
@@ -458,7 +459,9 @@ Tracy-Widom tests, were retained for further analysis. All PCs were
 centered and standardized prior to analysis. Statistical significance
 of RDA models, as well as RDA axes within these models, was tested using
 a permutation-based ANOVA with $9,999$ permutations \citep{Legendre:2011}. All
-RDA analyses were performed using the \texttt{vegan} library in R. 
+RDA analyses were performed using the \texttt{vegan} library in R
+\citep{R:vegan}.
+
 
 
 \subsection*{Genome-wide association analyses}
@@ -532,13 +535,15 @@ attributed to third axis, which was dominated by pupal duration time. The first
 RDA axis was highly correlated with environmental PC 1, genetic PCs 1 through
 3,
 latitude, and longitude, whereas the second RDA axis was most correlated with
-environmental PC1, genetic PCs 4 and above, and latitude (Figure 2).
+environmental PC1, genetic PCs 4 and above, and latitude (Figure
+\ref{fig:rda}).
 
 Partitioning the contribution of each type of variable to the overall
 explanatory power of the full RDA model revealed that
 genetic variation and geography had the largest pure effects on phenotypic
 trait
-variation (Figure 2B). Of these, genetic PCs accounted for the vast majority
+variation (Figure \ref{fig:rda}B). Of these, genetic PCs accounted for the vast
+majority
 (i.e. $68.74\%$) of the total effect. Testing the statistical significance of
 the partial RDA (pRDA) models used to estimate pure effects of each variable
 was
@@ -554,7 +559,8 @@ either genetic variation ($4.72\%$) or geography ($3.08\%$).
 
 
 \subsection*{Genome-wide association analyses}
-Across four independent runs of $100e6$ steps, thinned every 1000 steps, GEMMA
+Across four independent runs of $100e6$ steps, thinned every 1000 steps,
+\texttt{GEMMA}
 was assessed 
 for convergence using the \texttt{coda} \citep[][version 0.18.1]{coda} package
 in R. Trace plots and independent 
